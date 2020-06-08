@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLyt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/round_filled4"
+        android:padding="10dp">
+
+        <FrameLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/topBar"
+            android:layout_alignEnd="@+id/topBar"
+            android:layout_alignRight="@+id/topBar"
+            android:layout_gravity="top|end"
+            android:background="@drawable/round_corners_btn_2"
+            android:padding="10dp">
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@drawable/round_corners_btn_2"
+            android:elevation="24dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <com.kpitb.zakatandusher.utility.CustomTextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="App Introduction"
+                android:layout_weight="8"
+                android:scaleType="fitCenter"/>
+
+            <ImageView
+                android:id="@+id/dialog_close"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="-50dp"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:src="@drawable/ic_close" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/field1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topBar"
+            android:padding="10dp">
+
+            <ScrollView
+                android:id="@+id/field_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.kpitb.zakatandusher.utility.CustomTextView
+                    android:id="@+id/content_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/introduction_app"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </ScrollView>
+
+            <RelativeLayout
+                android:id="@+id/btn_never_ask"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/round_corners_btn_2"
+                android:fontFamily="sans-serif"
+                android:stateListAnimator="@drawable/state_list_animator_z"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/field_text"
+                tools:ignore="OnClick">
+
+                <com.kpitb.zakatandusher.utility.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Never show again"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_next"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/round_corners_btn_2"
+                android:fontFamily="sans-serif"
+                android:stateListAnimator="@drawable/state_list_animator_z"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="@+id/field_text"
+                app:layout_constraintTop_toBottomOf="@+id/field_text"
+                tools:ignore="OnClick">
+
+                <com.kpitb.zakatandusher.utility.CustomTextView
+                    android:id="@+id/lbl_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Close"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+                <!--<com.wang.avi.AVLoadingIndicatorView-->
+                    <!--android:id="@+id/aviIndicatior"-->
+                    <!--style="@style/AVLoadingIndicatorView"-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_marginLeft="-50dp"-->
+                    <!--android:padding="10dp"-->
+                    <!--android:visibility="invisible"-->
+                    <!--app:indicatorColor="@color/color3"-->
+                    <!--app:indicatorName="BallScaleRippleMultipleIndicator" />-->
+
+                <!--<com.kpitb.manxoor.merahalqa.activities.Utils.CustomTextView-->
+                    <!--android:id="@+id/timer"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:layout_weight="2"-->
+                    <!--android:padding="6dp"-->
+                    <!--android:text="justChecking"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textSize="12sp" />-->
+            <!--</LinearLayout>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</RelativeLayout>

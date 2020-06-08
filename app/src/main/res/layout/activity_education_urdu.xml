@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_bg"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+        <include layout="@layout/main_toolbar"
+            android:id="@+id/toolbar"></include>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/white"
+            android:elevation="16dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_corners_btn_2"
+                    android:backgroundTint="@color/white"
+                    android:padding="4dp">
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:textAlignment="gravity"
+                        android:layout_height="wrap_content"
+                        android:text="@string/education_general_allownce_u"
+                        android:textColor="@color/color3"
+                        android:textSize="16sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/mainCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="8dp"
+                    android:weightSum="8"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:fontFamily="serif"
+                        android:gravity="center|right"
+                        android:text="@string/edu_general_intro_u"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/elgibelity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:elevation="16dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/intro"
+            app:layout_constraintStart_toStartOf="@+id/intro"
+            app:layout_constraintTop_toBottomOf="@+id/intro"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_corners_btn_2"
+                    android:backgroundTint="@color/white"
+                    android:padding="4dp">
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/elgibelity_head_u"
+                        android:textColor="@color/color3"
+                        android:textSize="16sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:weightSum="8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:fontFamily="serif"
+                        android:gravity="center|right"
+                        android:text="@string/edu_general_eligibility_u"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/how_to_apply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:elevation="16dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/elgibelity"
+            app:layout_constraintStart_toStartOf="@+id/elgibelity"
+            app:layout_constraintTop_toBottomOf="@+id/elgibelity"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_corners_btn_2"
+                    android:backgroundTint="@color/white"
+                    android:padding="4dp">
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/how_to_apply_label_u"
+                        android:textColor="@color/color3"
+                        android:textSize="16sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:gravity="center|right"
+                        android:text="@string/text_how_to_apply_edu_general_u"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/btn_appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/color3"
+            android:elevation="12dp"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"
+            android:paddingHorizontal="32dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_apply"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <com.kpitb.zakatandusher.utility.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/ic_click"
+                android:drawablePadding="12dp"
+                android:onClick="DownloadForm"
+                android:text="فارم حاصل کرنے کے لئے کلک کریں"
+                android:textColor="@color/white"
+                tools:ignore="OnClick" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
