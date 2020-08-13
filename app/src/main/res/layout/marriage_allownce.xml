@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient_bg"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
+    android:orientation="vertical"
+    android:id="@+id/guzara_parent_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <include layout="@layout/main_toolbar"
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollV"
+    android:background="@color/grey">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <include layout="@layout/main_toolbar"
         android:id="@+id/toolbar"></include>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/intro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
         android:elevation="16dp"
         app:cardCornerRadius="5dp"
@@ -199,34 +208,37 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <RelativeLayout
-        android:id="@+id/btn_appointment"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:background="@color/color3"
-        android:elevation="12dp"
-        android:gravity="center_horizontal"
-        android:padding="8dp"
-        android:layout_marginTop="16dp"
-        android:paddingHorizontal="32dp"
-        android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@+id/how_to_apply"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-        <com.kpitb.zakatandusher.utility.CustomTextView
+        <RelativeLayout
+            android:id="@+id/btn_appointment"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:drawableLeft="@drawable/ic_click"
-            android:drawablePadding="12dp"
-            android:onClick="DownloadForm"
-            android:text="Click here to get form"
-            android:textColor="@color/white"
-            tools:ignore="OnClick" />
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/color3"
+            android:elevation="12dp"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:paddingHorizontal="32dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
 
-    </RelativeLayout>
+            <com.kpitb.zakatandusher.utility.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/ic_click"
+                android:drawablePadding="12dp"
+                android:onClick="DownloadForm"
+                android:text="Click here to get form"
+                android:textColor="@color/white"
+                tools:ignore="OnClick" />
+
+        </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+</LinearLayout>

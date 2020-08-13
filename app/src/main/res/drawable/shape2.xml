@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="0"
+        android:startColor="#FFD600"
+        android:endColor="#FFF59D"/>
 
-</selector>
+    <padding
+        android:bottom="3dp"
+        android:left="3dp"
+        android:right="3dp"
+        android:top="3dp"/>
+    <corners
+        android:bottomLeftRadius="45dp"
+        android:bottomRightRadius="45dp"
+        android:topLeftRadius="45dp"
+        android:topRightRadius="45dp"/>
+</shape>

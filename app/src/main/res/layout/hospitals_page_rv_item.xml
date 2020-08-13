@@ -37,15 +37,39 @@
         app:layout_constraintStart_toEndOf="@+id/ivImage"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.kpitb.zakatandusher.utility.CustomTextView
-            android:id="@+id/tvTitle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            android:layout_gravity="center_horizontal|bottom"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <com.kpitb.zakatandusher.utility.CustomTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:layout_weight="1.6"
+                android:layout_gravity="center_horizontal|bottom"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:singleLine="true"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginRight="1dp"
+                android:layout_marginLeft="4dp"
+                android:text="Location"/>
+
+        </LinearLayout>
+
         <LinearLayout
             android:id="@+id/container_tvDzo"
             android:layout_width="match_parent"

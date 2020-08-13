@@ -29,10 +29,10 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 
 public class MainPageAdapter extends RecyclerView.Adapter<MainPageAdapter.ViewHolder> {
-    private Context context;
-    private LayoutInflater inflater;
-    int from;
-    ArrayList<HomePageModel> data, filterlist;
+        private Context context;
+        private LayoutInflater inflater;
+        int from;
+        ArrayList<HomePageModel> data, filterlist;
 
     // create constructor to initialize context and data sent from MainActivity
     public MainPageAdapter(Context context, ArrayList<HomePageModel> data) {

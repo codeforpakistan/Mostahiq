@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kpitb.zakatandusher.MapsLocation;
 import com.kpitb.zakatandusher.Modal.DistrictPageModel;
 import com.kpitb.zakatandusher.R;
 import com.kpitb.zakatandusher.utility.CustomTextView;
@@ -56,6 +57,7 @@ public class HospitalListAdapter extends RecyclerView.Adapter<HospitalListAdapte
         private ImageView status_image;
         private TextView hospitalName, phoneNumber, focalPersonName;
         private ConstraintLayout backgroud;
+        private TextView location;
 
         DistrictPageModel dirObj;
 
@@ -67,9 +69,10 @@ public class HospitalListAdapter extends RecyclerView.Adapter<HospitalListAdapte
             backgroud = itemView.findViewById(R.id.bg);
             phoneNumber = itemView.findViewById(R.id.tvTitle3);
             focalPersonName = itemView.findViewById(R.id.tvTitle2);
+            location = itemView.findViewById(R.id.location);
         }
 
-        public void bindData(DistrictPageModel c) {
+        public void bindData(final DistrictPageModel c) {
             dirObj = c;
 
             final String hospital = c.getDistrictTitle();
@@ -79,8 +82,30 @@ public class HospitalListAdapter extends RecyclerView.Adapter<HospitalListAdapte
             hospitalName.setText(c.getDistrictTitle());
             phoneNumber.setText(c.getPhoneNumber());
             focalPersonName.setText(c.getDzo_name());
-//            status_image.setImageResource(c.getStatus_icon());
-//            backgroud.setBackgroundColor(ContextCompat.getColor(context, c.getColor()));
+
+            location.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Toast.makeText(context, c.getDistrictTitle().equals("IRNUM Hospital, Peshawar"), Toast.LENGTH_SHORT).show();
+                    if (c.getDistrictTitle().equals("IRNUM Hospital, Peshawar"))
+                    {
+                        Intent intent = new Intent(context, MapsLocation.class);
+                        intent.putExtra("myLat","33.998735");
+                        intent.putExtra("myLong","71.485564");
+                        context.startActivity(intent);
+                    }
+                    else if (c.getDistrictTitle().equals("Lady Reading Hospital (General), Peshawar")){
+                        Intent intent = new Intent(context, MapsLocation.class);
+                        intent.putExtra("myLat","34.027339");
+                        intent.putExtra("myLong","71.559010");
+                        context.startActivity(intent);
+                    }
+                    else {
+                        Intent intent = new Intent(context, MapsLocation.class);
+                        context.startActivity(intent);
+                    }
+                }
+            });
 
             backgroud.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -88,6 +113,7 @@ public class HospitalListAdapter extends RecyclerView.Adapter<HospitalListAdapte
                     showClickToCallDialog(hospital,fperson,phoneNo);
                 }
             });
+
         }
     }
 

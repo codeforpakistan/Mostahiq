@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kpitb.zakatandusher.DistrictZakatComittee;
+import com.kpitb.zakatandusher.MapsLocation;
 import com.kpitb.zakatandusher.Modal.DistrictPageModel;
 import com.kpitb.zakatandusher.R;
 import com.kpitb.zakatandusher.utility.CustomTextView;
@@ -56,7 +57,7 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHo
         private String request_status;
         private int status_icon;
         private ImageView status_image,CallDZO;
-        private TextView request_label,districtDetails,dzo_name,dzoPhoneNo;
+        private TextView request_label,districtDetails,dzo_name,dzoPhoneNo,locationIcon;
         private ConstraintLayout backgroud;
 
         DistrictPageModel dirObj;
@@ -71,6 +72,7 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHo
             dzo_name = itemView.findViewById(R.id.tvTitle2);
             dzoPhoneNo = itemView.findViewById(R.id.dzo_phoneNo);
             CallDZO = itemView.findViewById(R.id.call_dzo);
+            locationIcon = itemView.findViewById(R.id.location);
 
         }
 
@@ -87,6 +89,15 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHo
                 @Override
                 public void onClick(View view) {
                     showClickToCallDialog(c.getDzo_name(),c.getPhoneNumber());
+                }
+            });
+
+            locationIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, c.getDzo_name(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, MapsLocation.class);
+                    context.startActivity(intent);
                 }
             });
 

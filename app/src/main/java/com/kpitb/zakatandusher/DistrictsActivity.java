@@ -2,6 +2,7 @@ package com.kpitb.zakatandusher;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,8 +12,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
+import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.kpitb.zakatandusher.Adapter.DistrictAdapter;
 import com.kpitb.zakatandusher.Adapter.MainAdapter;
 import com.kpitb.zakatandusher.Modal.DistrictPageModel;
@@ -25,6 +31,10 @@ public class DistrictsActivity extends AppCompatActivity implements SearchView.O
     private RecyclerView mRecyclerView;
     DistrictAdapter myAdapter;
     private ArrayList<DistrictPageModel> arrayList;
+
+    TextView txt_eng, txt_urdu;
+    LinearLayout top_linear;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +45,50 @@ public class DistrictsActivity extends AppCompatActivity implements SearchView.O
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        final TextView textView_urdu = (TextView)findViewById(R.id.txt2);
+        final TextView textView_eng = (TextView)findViewById(R.id.txt);
+        YoYo.with(Techniques.ZoomIn)
+                .duration(1500)
+                .repeat(0)
+                .playOn(textView_eng);
+
+        top_linear = findViewById(R.id.top_linear);
+        txt_eng = findViewById(R.id.eng);
+        txt_urdu = findViewById(R.id.urdu);
+
+        YoYo.with(Techniques.ZoomIn)
+                .duration(1500)
+                .repeat(0)
+                .playOn(top_linear);
+
+        txt_urdu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txt_eng.setBackgroundResource(0);
+                txt_eng.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+
+                txt_urdu.setBackgroundResource(R.drawable.language_bg);
+                txt_urdu.setTextColor(ContextCompat.getColor(DistrictsActivity.this, R.color.colorPrimaryDark));
+
+                textView_eng.setVisibility(View.GONE);
+                textView_urdu.setVisibility(View.VISIBLE);
+            }
+        });
+
+        txt_eng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txt_urdu.setBackgroundResource(0);
+                txt_urdu.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+
+                txt_eng.setBackgroundResource(R.drawable.language_bg);
+                txt_eng.setTextColor(ContextCompat.getColor(DistrictsActivity.this,R.color.colorPrimaryDark));
+
+                textView_urdu.setVisibility(View.GONE);
+                textView_eng.setVisibility(View.VISIBLE);
+            }
+        });
 
         setUpRescyclerView();
     }

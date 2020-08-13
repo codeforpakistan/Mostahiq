@@ -55,7 +55,7 @@
                 android:textAllCaps="true"
                 android:gravity="center_vertical"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/ivImage"
                 app:layout_constraintEnd_toEndOf="parent"

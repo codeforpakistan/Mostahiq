@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.kpitb.zakatandusher.DistrictsActivity;
 import com.kpitb.zakatandusher.Modal.HomePageModel;
+import com.kpitb.zakatandusher.Modal.MainPageModel;
 import com.kpitb.zakatandusher.ProvincialActivity;
 import com.kpitb.zakatandusher.R;
 import com.kpitb.zakatandusher.ZakatSchemes;
@@ -28,10 +30,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private Context context;
     private LayoutInflater inflater;
     int from;
-    ArrayList<HomePageModel> data, filterlist;
+    ArrayList<MainPageModel> data, filterlist;
 
     // create constructor to initialize context and data sent from MainActivity
-    public MainAdapter(Context context, ArrayList<HomePageModel> data) {
+    public MainAdapter(Context context, ArrayList<MainPageModel> data) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.data = data;
@@ -41,22 +43,24 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         private String request_status;
         private int status_icon;
         private ImageView status_image;
-        private TextView request_label;
-        private ConstraintLayout backgroud;
+        private TextView request_label,request_label_urdu;
+        private RelativeLayout backgroud;
 
-        HomePageModel dirObj;
+        MainPageModel dirObj;
 
         public ViewHolder(View v) {
             super(v);
 
             request_label =  itemView.findViewById(R.id.tvTitle);
+            request_label_urdu =  itemView.findViewById(R.id.tvTitleUrdu);
             status_image  = itemView.findViewById(R.id.ivImage);
             backgroud = itemView.findViewById(R.id.bg);
         }
 
-        public void bindData(HomePageModel c) {
+        public void bindData(MainPageModel c) {
             dirObj = c;
             request_label.setText(c.getRequestStatus());
+            request_label_urdu.setText(c.getRequestStatusUrdu());
             status_image.setImageResource(c.getStatus_icon());
             backgroud.setBackgroundColor(ContextCompat.getColor(context, c.getColor()));
 
@@ -64,11 +68,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 @Override
                 public void onClick(View v) {
                     String lable = request_label.getText().toString();
-                    if(request_label.getText().equals("Zakat Schemes Information")){
+                    if(request_label.getText().equals("Zakat Schemes Information")
+                        || request_label_urdu.getText().equals("زکوٰۃ سکیموں کی معلومات")){
                         context.startActivity(new Intent(context, ZakatSchemes.class));
-                    }else if(request_label.getText().equals("Districts Information")){
+                    }else if(request_label.getText().equals("Districts Information")
+                        || request_label_urdu.getText().equals("اضلاع سے متعلق معلومات")){
                         context.startActivity(new Intent(context, DistrictsActivity.class));
-                    }else if(request_label.getText().equals("Provincial Hospitals Information")){
+                    }else if(request_label.getText().equals("Provincial Hospitals Information")
+                        || request_label_urdu.getText().equals("صوبائی اسپتالوں کی معلومات")){
                         context.startActivity(new Intent(context, ProvincialActivity.class));
                     }
                 }
@@ -86,7 +93,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        HomePageModel cases = data.get(position);
+        MainPageModel cases = data.get(position);
         holder.bindData(cases);
     }
 

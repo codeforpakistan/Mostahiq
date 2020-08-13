@@ -4,12 +4,19 @@
     <string name="closeDrawer">CLOSE_DRAWER</string>
 
     <string name="guzara_allownce">GUZARA ALLOWANCE</string>
+    <string name="guzara_allownce_urdu">گوزارا الاؤنس</string>
     <string name="guzara_intro">Guzara allowance is a monthly grant meant for the chronic poor. It aims to safeguard them from hunger which is both cause and manifestation of extreme poverty. Its current monthly rate is Rs. 2000 and is paid by the local Zakat committee of the area of residence of the deserving (Mustahiq) person.</string>
+    <string name="guzara_intro_urdu">گوزآرا الاؤنس ایک ماہانہ گرانٹ ہے جس کا مطلب دائمی غریبوں کے لئے ہے. اس کا مقصد ان کی بھوک سے تحفظ کرنا ہے جو دونوں ہی شدید غربت کا سبب اور اظہار ہے ۔ اس کی موجودہ ماہانہ شرح 2000 روپے ہے اور اس کے لئے مستحق (موسٹہاق) شخص کی رہائش گاہ کے علاقے کی مقامی زکوٰۃ کمیٹی کی طرف سے ادا کی جاتی ہے ۔</string>
     <string name="elgibelity_head">Eligibility Criteria</string>
-    <string name="guzara_eligibility">1.    Istehqaq is determined by Local Zakat Committee of the area of permanent residence of the applicant \n
+    <string name="elgibelity_head_urdu">اہلیت کے معیار</string>
+    <string name="guzara_eligibility">1.Istehqaq is determined by Local Zakat Committee of the area of permanent residence of the applicant \n
         2.  Adult Muslim, living below poverty level with preference to widows and disabled. \n
         3.  Unemployed. \n
         4.  Not a habitual beggar</string>
+    <string name="guzara_eligibility_urdu">1. درخواست گزار کی مستقل رہائش گاہ کے علاقے کی مقامی زکوٰۃ کمیٹی کی طرف سے مقرر کیا گیا ہے.
+2. بالغ مسلمان, بیواؤں اور معذور لوگوں کو ترجیح کے ساتھ غربت کی سطح کے نیچے رہنے والے.
+3. بے روزگار ۔
+4. ایک بے عادت نہیں.</string>
     <string name="how_to_apply_label">How to Apply</string>
     <string name="text_how_to_apply">The deserving person can apply to the Chairman, Local Zakat Committee of the area of his/her residence. Local Zakat Committee, keeping in view of the financial condition of the applicant, may determine or reject his/her Istehqaq. Guzara allowance is paid via cross cheque.  </string>
     <string name="bullets_h_t_apply"> 1. Rs. 415.200 million, 60% of the regular Zakat budget. \n
@@ -31,15 +38,15 @@
     <string name="education_general_allownce_u">تعلیمی گرانٹ (عام)</string>
     <string name="edu_general_intro_u">تعلیمی وظیفہ (عام) کا مقصد مستحق طلباء کو اپنی تعلیم جاری رکھنے میں مدد کے لئے مالی اعانت فراہم کرنا ہے</string>
     <string name="elgibelity_head_u">اہلیت کا معیار</string>
-    <string name="edu_general_eligibility_u">خیبر پختونخوا میں ایسے کالجوں ، یونیورسٹیوں ، پولی ٹیکنک اور دیگر تعلیمی اور پیشہ ورانہ اداروں میں تعلیم حاصل کرنے والے غریب اور مستحق طلباء کو وظیفہ فراہم کیا جاتا ہے جو حکومت کے ذریعہ قائم یا تسلیم شدہ ہیں۔ استحاق کا تعین مقامی زکوٰ کمیٹیوں کے ذریعہ کیا جاتا ہے اور تعلیمی انسٹیٹیوٹ کی اسکالرشپ کمیٹی نے اس کی تائید کی ہے۔ اسکالرشپ کمیٹی میں ہیڈ آف انسٹی ٹیوشن ، کلاس ٹیچر اور ڈسٹرکٹ زکوٰ کمیٹی کا نامزد کیا گیا ہے</string>
+    <string name="edu_general_eligibility_u">خیبر پختونخوا میں ایسے کالجوں ، یونیورسٹیوں ، پولی ٹیکنک اور دیگر تعلیمی اور پیشہ ورانہ اداروں میں تعلیم حاصل کرنے والے غریب اور مستحق طلباء کو وظیفہ فراہم کیا جاتا ہے جو حکومت کے ذریعہ قائم یا تسلیم شدہ ہیں۔ استحاق کا تعین مقامی زکوٰۃ کمیٹیوں کے ذریعہ کیا جاتا ہے اور تعلیمی انسٹیٹیوٹ کی اسکالرشپ کمیٹی نے اس کی تائید کی ہے۔ اسکالرشپ کمیٹی میں ہیڈ آف انسٹی ٹیوشن ، کلاس ٹیچر اور ڈسٹرکٹ زکوٰۃ کمیٹی کا نامزد کیا گیا ہے</string>
     <string name="how_to_apply_label_u">درخواست دینے کا طریقہ</string>
     <string name="text_how_to_apply_edu_general_u">ایک مستحق طالب علم اس ادارے کے سربراہ کے لئے درخواست دے سکتا ہے جو مقامی زکوٰ  کمیٹی کے ذریعہ استحقاق کے عزم کے بعد اس پر عملدرآمد کرے گا۔ ضلعی زکوٰ کمیٹی کے ذریعہ فنڈز متعلقہ تعلیمی ادارے کو جاری کردیئے گئے ہیں جو طالب علم کو ادائیگی کریں گے</string>
     <string name="translate_into_english">Translate to English</string>
     <string name="translate_into_urdu">Translate to Urdu</string>
     <string name="edu_professional_allownce_u">تعلیمی گرانٹ (پیشہ ور)</string>
-    <string name="edu_prof_intro_u"><![CDATA[غریب نوجوانوں کو کمائی کا ہاتھ بنانے کے لئے ، محکمہ زکوٰ & اور عشر نے ایک خصوصی پروگرام شروع کیا ہے۔ اس جامع پروگرام کے ذریعہ طلباء کو اضلاع کے مشہور تکنیکی پیشہ ور اداروں کے ذریعہ مارکیٹ پر مبنی تجارت میں مفت تکنیکی تربیت دی جاتی ہے۔ تربیت کے دوران ، روپے 2000 / - ماہانہ ہر ٹرینی کو دیا جاتا ہے اور 500 روپے۔ 8،000 / - ٹولز کی خریداری کے ساتھ کورس کی تکمیل کا سرٹیفکیٹ بھی ان کی کامیاب ٹریننگ کے اختتام پر دیا جاتا ہے۔]]></string>
-    <string name="edu_prof_eligibility_u">استحاق کا تعین مقامی زکوٰ کمیٹیوں کے ذریعہ کیا جاتا ہے اور چیئرمین ڈسٹرکٹ زکوٰ کمیٹی ، ڈسٹرکٹ زکا Officer آفیسر ، پرنسپل ووکیشنل ٹریننگ انسٹی ٹیوٹ ، کلاس ٹیچر اور ایک ممبر ڈسٹرکٹ زکوٰ کمیٹی پر مشتمل تعلیمی انسٹی ٹیوٹ کی اسکالرشپ کمیٹی کے ذریعہ اس کی تائید ہوتی ہے۔</string>
-    <string name="text_how_to_apply_edu_prof_u">طالب علم اپنے ادارہ کے توسط سے اسٹیکنڈس ٹیکنیکل کے ل form ڈسٹرکٹ زکوٰ to کمیٹی میں درخواست دے سکتا ہے ، جو متعلقہ مقامی زکوat کمیٹی کے ذریعہ استحاق کے تعین کے تحت ہے۔ ضلعی زکوٰ Committee کمیٹی تکنیکی طلبہ کو مستحق طلباء وظائف کے لئے فنڈز جاری کرتی ہے۔</string>
+    <string name="edu_prof_intro_u"><![CDATA[غریب نوجوانوں کو ایک کمائی کے ہاتھ بنانے کے لئے, زکوٰۃ اور عشر محکمہ ایک خصوصی پروگرام شروع کر دیا ہے. اس جامع پروگرام کے ذریعے ، طلباء کو اضلاع کے معروف ٹیکنیکل پیشہ ورانہ اداروں کے ذریعے مارکیٹ پر مبنی تجارت میں مفت ٹیکنیکل تربیت دی جاتی ہے. تربیت کے دوران ، فی مہینہ 2000 روپے ہر ایک کے لئے دیا جاتا ہے اور اس کے ساتھ ساتھ آلات کی خریداری کے لئے 8,000 روپے کے لئے ، کورس کے مکمل سرٹیفکیٹ ان کے کامیاب تربیت کے اختتام پر بھی دیا جاتا ہے.]]></string>
+    <string name="edu_prof_eligibility_u">استحاق کا تعین مقامی زکوٰۃ کمیٹیوں کے ذریعہ کیا جاتا ہے اور چیئرمین ڈسٹرکٹ زکوٰۃ کمیٹی ، ڈسٹرکٹ زکوٰۃ آفیسر ، پرنسپل ووکیشنل ٹریننگ انسٹی ٹیوٹ ، کلاس ٹیچر اور ایک ممبر ڈسٹرکٹ زکوٰۃ کمیٹی پر مشتمل تعلیمی انسٹی ٹیوٹ کی اسکالرشپ کمیٹی کے ذریعہ اس کی تائید ہوتی ہے۔</string>
+    <string name="text_how_to_apply_edu_prof_u">طالب علم کو اس کے ادارے کے ذریعہ مقرر کردہ فارم کے لئے مقررہ شکل میں ضلع زکوٰۃ کمیٹی پر لاگو کر سکتے ہیں ، جس میں متعلقہ مقامی زکوٰۃ کمیٹی کی جانب سے تشویش کا تعین کیا گیا ہے. ضلع زکوٰۃ کمیٹی مستحق طلباء کے لئے ٹیکنیکل اداروں کو فنڈز جاری کرتی ہے۔</string>
     <string name="introduction"><![CDATA[The Government of Pakistan introduced Zakat system in the country for the first time in 1980 through an Ordinance. \n \n
      Till 1994, the system worked under the administrative control of provinces. \n \n
      In July, 1994 it was federalized and went  under the direct supervision of Federal Govt: for two and a half years. \n \n
@@ -167,5 +174,10 @@
         Indoor patients \t\t\t\tRs. 10,000/- per visit \n
         Outdoor patients \t\t\t\tRs.   5,000/- per visit</string>
     <string name="health_care_eligibility">Istehqaq is determined by the local Zakat committee of the area of permanent residence of the patient.</string>
+    <string name="title_activity_maps_location">Map</string>
+    <string name="normal_map">Normal Map</string>
+    <string name="hybrid_map">Hybrid Map</string>
+    <string name="satellite_map">Satellite Map</string>
+    <string name="terrain_map">Terrain Map</string>
 
 </resources>

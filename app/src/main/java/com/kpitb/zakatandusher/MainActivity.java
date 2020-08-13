@@ -3,24 +3,32 @@ package com.kpitb.zakatandusher;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.kpitb.zakatandusher.Adapter.MainAdapter;
 import com.kpitb.zakatandusher.Modal.HomePageModel;
+import com.kpitb.zakatandusher.Modal.MainPageModel;
 import com.kpitb.zakatandusher.utility.CustomTextView;
 
 import java.util.ArrayList;
@@ -30,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawer;
     private View navHeader;
     Toolbar mToolbar;
-    private HomePageModel homePageData;
+    private MainPageModel mainPageModel;
     private RecyclerView mRecyclerView;
-    private ArrayList<HomePageModel> arrayList;
+    private ArrayList<MainPageModel> arrayList;
     int MENU_GUZARA_ALLOWNCE = Menu.FIRST;
     int MENU_MARRIAGE_ASSITANCE_GRANT = Menu.FIRST + 1;
     int MENU_EDUCATIONAL_GRANT = Menu.FIRST + 2;
@@ -41,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
     int MENU_HEALTH_CARE = Menu.FIRST + 5;
     Dialog IntroDialog;
     public static String MY_PREFS_NAME = "shaki_boy";
+
+    LinearLayout drawer_layout;
+    View my_View;
+    FrameLayout my_frame_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,41 +82,12 @@ public class MainActivity extends AppCompatActivity {
         setUpNavigationView();
     }
 
-    private void setUpLocationRescyclerView() {
-        arrayList = new ArrayList<>();
-        homePageData = new HomePageModel("Abottabad", R.color.orange,
-                R.drawable.ic_children);
-        arrayList.add(homePageData);
-        homePageData = new HomePageModel("Bannu", R.color.yellow50,
-                R.drawable.ic_basketball);
-        arrayList.add(homePageData);
-        homePageData = new HomePageModel("Buner", R.color.blue700,
-                R.drawable.ic_abc_block);
-        arrayList.add(homePageData);
-        homePageData = new HomePageModel("Battagram", R.color.greenA700,
-                R.drawable.ic_graduation_cap);
-        arrayList.add(homePageData);
-        homePageData = new HomePageModel("Chitral", R.color.mosque,
-                R.drawable.ic_mosque);
-        arrayList.add(homePageData);
-        homePageData = new HomePageModel("Charsadda", R.color.main_pending,R.drawable.ic_doctor);
-        arrayList.add(homePageData);
-
-        mRecyclerView = findViewById(R.id.location_resyclerView);
-//         mGridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        MainAdapter myAdapter = new MainAdapter(MainActivity.this, arrayList);
-        mRecyclerView.setAdapter(myAdapter);
-    }
-
     private void initViews() {
         mToolbar = findViewById(R.id.app_bar);
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view1);
         navHeader = navigationView.getHeaderView(0);
         mRecyclerView = findViewById(R.id.resyclerView);
-
     }
 
     private void setUpNavigationView() {
@@ -137,17 +120,20 @@ public class MainActivity extends AppCompatActivity {
     private void setUpRescyclerView() {
 
         arrayList = new ArrayList<>();
-        homePageData = new HomePageModel("Districts Information", R.color.orange,
-                R.drawable.ic_address);
-        arrayList.add(homePageData);
 
-        homePageData = new HomePageModel("Provincial Hospitals Information", R.color.yellow50,
-                R.drawable.ic_health);
-        arrayList.add(homePageData);
-
-        homePageData = new HomePageModel("Zakat Schemes Information", R.color.blue700,
+        mainPageModel = new MainPageModel("Zakat Schemes Information","زکوٰۃ سکیموں کی معلومات", R.color.blue700,
                 R.drawable.ic_provider);
-        arrayList.add(homePageData);
+        arrayList.add(mainPageModel);
+
+        mainPageModel = new MainPageModel("Provincial Hospitals Information","صوبائی اسپتالوں کی معلومات",
+                R.color.yellow50,
+                R.drawable.ic_health);
+        arrayList.add(mainPageModel);
+
+        mainPageModel = new MainPageModel("Districts Information","اضلاع سے متعلق معلومات",
+                R.color.orange,
+                R.drawable.ic_address);
+        arrayList.add(mainPageModel);
 
         mRecyclerView = findViewById(R.id.resyclerView);
 //         mGridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
@@ -165,16 +151,59 @@ public class MainActivity extends AppCompatActivity {
         IntroDialog.setCancelable(true);
         IntroDialog.show();
 
-
-        ImageView closeDialog = IntroDialog.findViewById(R.id.dialog_close);
         RelativeLayout neverAsk = IntroDialog.findViewById(R.id.btn_never_ask);
-        RelativeLayout next = IntroDialog.findViewById(R.id.btn_next);
+        final RelativeLayout next = IntroDialog.findViewById(R.id.btn_next);
+
+        final LinearLayout middle_layout = IntroDialog.findViewById(R.id.middle_layout);
+        final RelativeLayout relativeLayout = IntroDialog.findViewById(R.id.my_relative);
+        final ScrollView field_text = IntroDialog.findViewById(R.id.field_text);
+        //my_frame_view = IntroDialog.findViewById(R.id.my_frame_view);
+        final TextView eng_lang, urdu_lang;
+        eng_lang = IntroDialog.findViewById(R.id.eng);
+        urdu_lang = IntroDialog.findViewById(R.id.urdu);
+
+        urdu_lang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                eng_lang.setBackgroundResource(0);
+                eng_lang.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+
+                urdu_lang.setBackgroundResource(R.drawable.language_bg);
+                urdu_lang.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorPrimaryDark));
+
+                LayoutInflater inflater = (LayoutInflater) getApplicationContext()
+                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                my_View = inflater.inflate(R.layout.intro_in_urdu, null);
+                relativeLayout.addView(my_View);
+                relativeLayout.setVisibility(View.VISIBLE);
+                field_text.setVisibility(View.GONE);
+            }
+        });
+
+        eng_lang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (relativeLayout.getParent() != null)
+                {
+                    relativeLayout.removeView(my_View);
+                }
+                //drawer_layout.removeView(my_View);
+                relativeLayout.setVisibility(View.GONE);
+                field_text.setVisibility(View.VISIBLE);
+
+                urdu_lang.setBackgroundResource(0);
+                urdu_lang.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+
+                eng_lang.setBackgroundResource(R.drawable.language_bg);
+                eng_lang.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorPrimaryDark));
+            }
+        });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 IntroDialog.dismiss();
-                ShowDialogAppIntro();
             }
         });
 
@@ -188,13 +217,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        closeDialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                IntroDialog.dismiss();
-            }
-        });
     }
+
 
     private void ShowDialogAppIntro() {
         IntroDialog = new Dialog(MainActivity.this, android.R.style.Theme_Black_NoTitleBar);
@@ -202,7 +226,6 @@ public class MainActivity extends AppCompatActivity {
         IntroDialog.setContentView(R.layout.introduction_dialog_app);
         IntroDialog.setCancelable(true);
         IntroDialog.show();
-
 
         ImageView closeDialog = IntroDialog.findViewById(R.id.dialog_close);
         RelativeLayout neverAsk = IntroDialog.findViewById(R.id.btn_never_ask);
@@ -225,13 +248,6 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
                 editor.putBoolean("IntroFlag", false);
                 editor.apply();
-                IntroDialog.dismiss();
-            }
-        });
-
-        closeDialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                 IntroDialog.dismiss();
             }
         });

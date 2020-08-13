@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txt_dia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Select Language below !"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/language_layout"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lang1"
+            android:text="Urdu"
+            android:padding="7dp"
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:buttonTint="#fff"
+            android:layout_marginLeft="10dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lang2"
+            android:text="Pashto"
+            android:padding="7dp"
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:buttonTint="#fff"
+            android:layout_marginLeft="10dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lang3"
+            android:text="English"
+            android:padding="7dp"
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:buttonTint="#fff"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal"
+            android:layout_marginBottom="7dp">
+
+            <Button
+                android:id="@+id/btn_yes"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="14dp"
+                android:background="@android:color/white"
+                android:text="OK"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_no"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="14dp"
+                android:background="@android:color/white"
+                android:text="CANCEL"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_bg"
-    android:orientation="vertical"
-    android:id="@+id/guzara_parent_layout"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/scrollV"
-    android:background="@color/grey">
-
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/grey">
 
         <include layout="@layout/main_toolbar"
             android:id="@+id/toolbar"></include>
@@ -55,7 +48,7 @@
                     <com.kpitb.zakatandusher.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="واده مرسته"
+                        android:text="صحت کی دیکھ بال (ضلعی سطح)"
                         android:textColor="@color/color3"
                         android:textSize="16sp" />
                 </FrameLayout>
@@ -80,7 +73,11 @@
                         android:layout_weight="8"
                         android:fontFamily="serif"
                         android:gravity="center|right"
-                        android:text=" واده مرستې مقصد دا دى چې هغه ښځو مالى مرستې وشى. کمى چې دا واده وس نه لرى. هغوى ته ٢٠٠٠٠ روپئ ورکولى شى. "
+                        android:text=" یہ ایک صحت کی حفاظت ہے غریب مریضوں کے لئے جو اپنےعلاج کے اخراجات برداشت نہیں کر سکتے۔ حکومت خیبر پختون خوا کے ضلعی ہیڈ کوارٹر ہسپتالوں اور تحصیل ہیڈ کوارٹر ہسپتالوں کو مستحق مریضوں کے طبی علاج کے لئے زکوٰۃ فنڈز مہیا کیے جاتے ہیں.\n
+مریضوں کو مندرجہ ذیل اخراجات کے مطابق صحت کی دیکھ بھال فراہم کی جاتی ہے:
+ \nہسپتال کے اندر کا مریض 8  ہزار فی چکر
+\nہسپتال کے باہرکا مریض 4 ہزار فی چکر.
+"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="12sp" />
 
@@ -121,7 +118,7 @@
                     <com.kpitb.zakatandusher.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="د وړتیا معيارونه"
+                        android:text="صحت کی دیکھ بال (صوبائی سطح)"
                         android:textColor="@color/color3"
                         android:textSize="16sp" />
                 </FrameLayout>
@@ -145,7 +142,11 @@
                         android:layout_weight="8"
                         android:fontFamily="serif"
                         android:gravity="center|right"
-                        android:text=" هغه ښځه چى وس نه لرى غريبه وى. "
+                        android:text=" صوبے میں صوبائی سطح کے بڑے ہسپتالوں کے لئے مالی سال 2017-18ء کے دوران 71.00 ملین روپے مختص کیے گئے.
+مریضوں کو مندرجہ ذیل اخراجات کے مطابق صحت کی دیکھ بال فراہم کی جاتی ہے:
+ \nہسپتال کے اندر کا مریض 10ہزارروپے فی چکر
+\nہسپتال کے باہرکا مریض 5 ہزارروپے فی چکر
+"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="12sp" />
 
@@ -186,7 +187,7 @@
                     <com.kpitb.zakatandusher.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="څرنګه غوښتنه وکړۍ"
+                        android:text="اہلیت کا معیار"
                         android:textColor="@color/color3"
                         android:textSize="16sp" />
                 </FrameLayout>
@@ -202,12 +203,13 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="MissingConstraints">
 
+
                     <com.kpitb.zakatandusher.utility.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="serif"
                         android:gravity="center|right"
-                        android:text=" مستحق زنانه لوکل زکات کميټې نه د واده لپاره د مرستې غوښتنه کولى شى. لوکل زکات کميټې به د غوښتونکي خواست ګورى. او د نور تفتیش لپاره به يې ولسوالۍ کميټې ته ليږى. هغوى به غوښتونکي لپاره فنډز راوباسي. او لوکل زکات کميټې به پيسى غوښتونکي ته ورکوى. "
+                        android:text=" ٓاستحقق کا تعین مریض کے مستقل رہائشی علاقے  کی مقامی زکوٰۃ کمیٹی کرتی ہے۔ "
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="12sp" />
 
@@ -240,14 +242,11 @@
                 android:drawableLeft="@drawable/ic_click"
                 android:drawablePadding="12dp"
                 android:onClick="DownloadForm"
-                android:text="د فارم ترلاسه کولو لپاره دلته کلیک وکړئ"
+                android:text="فارم حاصل کرنے کے لئے یہاں کلک کریں"
                 android:textColor="@color/white"
                 tools:ignore="OnClick" />
 
         </RelativeLayout>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>
-</LinearLayout>

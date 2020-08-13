@@ -1,6 +1,7 @@
 package com.kpitb.zakatandusher;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -13,16 +14,21 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import static com.kpitb.zakatandusher.MainActivity.MY_PREFS_NAME;
+
 public class SplashActivity extends AppCompatActivity {
 
     private ImageView ivSplash;
+
+    Boolean introFlag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        introFlag = prefs.getBoolean("IntroFlagVideo",true);
 
         ivSplash = (ImageView) findViewById(R.id.ivSplash);
         scaleAnimation();
@@ -31,8 +37,16 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                      startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                finish();
+
+                if (introFlag)
+                {
+                    startActivity(new Intent(SplashActivity.this, VideoTutorialActivity.class));
+                    finish();
+                }
+                else {
+                    startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                    finish();
+                }
             }
         }, 3000);
     }

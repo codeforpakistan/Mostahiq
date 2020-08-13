@@ -1,10 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeeniMadarisUrdu">
+    android:background="@drawable/gradient_bg"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <include layout="@layout/main_toolbar"
+        android:id="@+id/toolbar"></include>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:background="@color/grey"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <RelativeLayout
+                android:id="@+id/btn_appointment"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/color3"
+                android:elevation="12dp"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:paddingHorizontal="32dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
+
+                <com.kpitb.zakatandusher.utility.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@drawable/ic_click"
+                    android:drawablePadding="12dp"
+                    android:onClick="DownloadForm"
+                    android:text="فارم حاصل کرنے کے لئے یہاں کلک کریں"
+                    android:textColor="@color/white"
+                    tools:ignore="OnClick" />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/elgibelity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/white"
+                android:elevation="16dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/intro"
+                app:layout_constraintStart_toStartOf="@+id/intro"
+                app:layout_constraintTop_toBottomOf="@+id/intro"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|right"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/round_corners_btn_2"
+                        android:backgroundTint="@color/white"
+                        android:padding="4dp">
+
+                        <com.kpitb.zakatandusher.utility.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="اہلیت کا معیار"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:textColor="@color/color3"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:weightSum="8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints">
+
+
+                        <com.kpitb.zakatandusher.utility.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="8"
+                            android:fontFamily="serif"
+                            android:gravity="center|right"
+                            android:text=" مستحق طلبا کووظیفہ فراہم کیا جاتا ہے جو زیرتعلیم  ہیں دینی مدارس میں جومحکمہ زکوٰۃ  کے ساتھ رجسٹرڈ ہیں اورمحکمہ داخلہ خیبر پختونخواہ سے کلیئرہیں۔ طلباء  کے استحقق  کا تعین مقامی زکوٰۃ کمیٹیوں کے ذریعہ کیا جاتا ہے اور اس کی تائید دینی مدارس کی اسکالرشپ کمیٹی جوادارہ کے سربراہان، کلاس ٹیچر اورنامزد ضلعی زکوٰۃ کمیٹی پر مشتمل ہے کے ذریعے ہوتی ہے۔ "
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/how_to_apply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/white"
+                android:elevation="16dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/elgibelity"
+                app:layout_constraintStart_toStartOf="@+id/elgibelity"
+                app:layout_constraintTop_toBottomOf="@+id/elgibelity"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|right"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/round_corners_btn_2"
+                        android:backgroundTint="@color/white"
+                        android:padding="4dp">
+
+                        <com.kpitb.zakatandusher.utility.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="درخواست دینے کا طریقہ"
+                            android:textColor="@color/color3"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints">
+
+
+                        <com.kpitb.zakatandusher.utility.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif"
+                            android:gravity="center|right"
+                            android:text=" ایک مستحق طالب علم ادارے کے سربراہ (محتمیم) کودرخواست  دے سکتا ہے جو مقامی زکوٰۃ کمیٹی کے ٓاستحقق کومتعین کرنے کے بعد اس پر عملدرآمد کرے گا۔ فنڈزضلعی زکوٰۃ کمیٹی کے ذریعہ متعلقہ دینی مدارس کو جاری کیے جاتے ہیں۔ "
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/white"
+                android:elevation="16dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|right"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/round_corners_btn_2"
+                        android:backgroundTint="@color/white"
+                        android:padding="4dp">
+
+                        <com.kpitb.zakatandusher.utility.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="دینی مدارس"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:textColor="@color/color3"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/mainCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:weightSum="8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints">
+
+
+                        <com.kpitb.zakatandusher.utility.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="8"
+                            android:fontFamily="serif"
+                            android:gravity="center|right"
+                            android:text=" تعلیمی وظیفہ (دینی مداریس) دینی تعلیم حاصل کرنے والے مستحق طلبا کو فراہم کیا جاتا ہے۔  اس کا مقصد ان کی مدد کرنا ہے کہ اسلامی تعلیمات کے مطابق اپنی تعلیم جاری رکھیں اورغیرریاست یا غیرمعاشرتی سرگرمیوں میں ملوث نہ ہوں۔ اس میں مدرسہ انتظامیہ کے  لیے عطیہ شامل ہےجوطلباء کے رہائش اور کھانے کے اخراجات کو  پورا  کرتا ہے۔
+وظائف کی شرحیں درج ذیل ہیں: \n
+درجہ ثلاثہ، ثانیہ اوراربع: \n
+دو ہزار روپے ماہانہ: \n
+درجہ خمسہ، ثلاثہ، موقف عالیہ اور دورۂ حدیث: \n
+تین ہزار روپے ماہانہ"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

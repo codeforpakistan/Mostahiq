@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ScrollView
+            android:id="@+id/field_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:id="@+id/content_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="حکومت پاکستان نے ایک آرڈیننس کے ذریعے 1980 میں پہلی بار ملک میں زکوٰۃ کا نظام متعارف کرایا ۔ \n\n
+1994 تک, نظام صوبوں کے انتظامی کنٹرول کے تحت کام کیا. \n\n
+ جولائی ، 1994 میں اس کو فیڈرلائزڈ کردیا گیا تھا اور ڈھائی سالوں تک وفاقی حکومت کی براہ راست نگرانی میں چلا گیا تھا ۔\n\n
+1997 میں ، وفاقی حکومت کا مرکزی کنٹرول ختم ہو گیا تھا اور زکاۃ سسٹم کے نظام کا عمل صوبائی زکوٰۃ انتظامیہ کو سونپا گیا تھا۔\n\n
+18 ویں آئینی ترمیم کے بعد ، زکوٰۃ کا نظام صوبوں میں وضع کیا گیا۔ وزارت زکوٰۃ اور عشر کے ذریعہ پہلے سے طے شدہ کچھ معاملات محکمہ زکوٰۃ اور عشر محکمہ خیبر پختونخوا کو منتقل کردیئے گئے ہیں.
+"
+                        android:visibility="visible"
+                        android:textColor="@color/black" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:id="@+id/my_view"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/content_text"/>
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:id="@+id/content_text2"
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="مستحق ایپلی کیشن زکوٰۃ اور عشر ڈیپارٹمنٹ کے مختلف سکیموں کے بارے میں عوامی آگاہی کے لئے ایک انفورماٹری پلیٹ فارم ہے ۔ \n\n
+اس ایپلی کیشن میں ضلع زکوٰۃ کمیٹیوں اور مقامی زکوٰۃ کمیٹیوں کے بارے میں معلومات شامل ہیں جن میں مرکزی شخص سے رابطہ نمبر موجود ہے ۔ \n\n
+ ایپلی کیشن میں صوبائی اسپتالوں کی فہرست بھی درج ہے جہاں زکوٰۃ اور عشر محکمہ سکیموں کا استعمال کرتے ہوئے عوام کو امداد مل سکتی ہے ۔ \n\n
+اس کے علاوہ اس ایپلی کیشن میں فی الحال زکوٰۃ اور عشر ڈیپارٹمنٹ کی طرف سے ضرورت مندوں کو مالی امداد کے لئے پیش کردہ سکیموں کی فہرست بھی شامل ہے.\n\n
+"                        android:textColor="@color/black"
+                        android:layout_below="@+id/my_view"
+                        android:layout_marginTop="15dp"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+</LinearLayout>

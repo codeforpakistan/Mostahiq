@@ -1,9 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".DeeniMadarisPashto">
+    android:background="@drawable/gradient_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/main_toolbar"
+        android:id="@+id/toolbar"></include>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:elevation="16dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/engIntro"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_corners_btn_2"
+                    android:backgroundTint="@color/white"
+                    android:padding="4dp">
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="دينى مدرسې"
+                        android:textColor="@color/color3"
+                        android:textSize="16sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/mainCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="8dp"
+                    android:weightSum="8"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:fontFamily="serif"
+                        android:gravity="center|right"
+                        android:text="دیني زده کړې ترلاسه کولو مستحق زده کونکو ته تعلیمي تادیه (دیني مداریس) چمتو شوې. هدف دا دی چې دوی سره د اسلامي لارښوونو مطابق خپلو زده کړو ته دوام ورکړي او نه د دولت ضد یا د ټولنې ضد فعالیتونو کې دخیل شي. پدې کې د مدرسې ادارې ته د زده کونکو د هستوګنې او خواړو لګښتونو پوره کولو لپاره وړیا مرسته ورکول کیږي.
+د بورسونو نرخونه په لاندې ډول دي: \n
+درجا سالسا ، سانیا او اربا: \n
+دوه زره روپۍ په میاشت کې: \n
+پنځه درجې,سدسا,موکوف او اله او دورۂ حدیث: \n
+ په میاشت کې درې زره روپۍ:"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/elgibelity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:elevation="16dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/intro"
+            app:layout_constraintStart_toStartOf="@+id/intro"
+            app:layout_constraintTop_toBottomOf="@+id/intro"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/elgibelity_criteria_eng"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_corners_btn_2"
+                    android:backgroundTint="@color/white"
+                    android:padding="4dp">
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="د وړتیا معیارونه"
+                        android:textColor="@color/color3"
+                        android:textSize="16sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:weightSum="8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:fontFamily="serif"
+                        android:gravity="center|right"
+                        android:text="دیني مدرسې کې د زده کړې مستحق زده کونکو ته وظیفې ورکړل شوې دي چې د زکات څانګې سره راجسټر شوي او د خیبر پښتونخوا د کورنیو چارو ریاست څخه پاک شوي دي. د زده کونکو استحقق د ځایی زکات کمیټو لخوا ټاکل شوی او د دیني مدرسې د بورس کمیټې لخوا تایید شوی چې د ادارې رییس ، ټولګي ښوونکی او د ولسوالۍ زکات کمیټې نومول شوی دی."
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/how_to_apply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:elevation="16dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/elgibelity"
+            app:layout_constraintStart_toStartOf="@+id/elgibelity"
+            app:layout_constraintTop_toBottomOf="@+id/elgibelity"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/how_to_apply_eng"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_corners_btn_2"
+                    android:backgroundTint="@color/white"
+                    android:padding="4dp">
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="څرنګه غوښتنه وکړۍ"
+                        android:textColor="@color/color3"
+                        android:textSize="16sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.kpitb.zakatandusher.utility.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:gravity="center|right"
+                        android:text="مستحق زده کونکی کولی شي د ادارې مشر (محتمیم) ته غوښتنه وکړي کوم چې به د ځایی زکات کمیټې لخوا د استحقق له ټاکلو وروسته دا پروسه وکړي. پیسې د ولسوالۍ د زکات کمیټې لخوا اړونده دیني مداریس ته خپروي"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/btn_appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/color3"
+            android:elevation="12dp"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:paddingHorizontal="32dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
+
+
+            <com.kpitb.zakatandusher.utility.CustomTextView
+                android:id="@+id/btn_eng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/ic_click"
+                android:drawablePadding="12dp"
+                android:onClick="DownloadForm"
+                android:text="د فارم ترلاسه کولو لپاره دلته کلیک وکړئ"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                tools:ignore="OnClick" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
