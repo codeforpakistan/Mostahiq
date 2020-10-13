@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:padding="16dp"
         android:layout_below="@+id/app_bar"
-        android:layout_above="@+id/view"
+        android:layout_above="@+id/txtComplaint"
         android:layout_marginBottom="5dp"
         ></androidx.recyclerview.widget.RecyclerView>
 
@@ -24,8 +24,40 @@
         android:id="@+id/txtComplaint"
         android:text="For complaints click below link"
         android:textAllCaps="true"
+        android:layout_alignParentLeft="true"
         android:layout_above="@+id/view"
-        />
+        android:textSize="13sp"
+        android:visibility="invisible"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginLeft="6dp"/>
+
+    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtComplaintUrdu"
+        android:text="شکایات کے لئے نیچے لنک پر کلک کریں"
+        android:textAllCaps="true"
+        android:layout_above="@+id/view"
+        android:textSize="14sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="6dp"/>
+
+    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtComplaintPashto"
+        android:text="د شکایتونو لپاره لاندې لینک باندې کلیک وکړئ"
+        android:textAllCaps="true"
+        android:layout_above="@+id/view"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="6dp"/>
 
     <RelativeLayout
         android:background="@drawable/footer_gradient"
@@ -39,15 +71,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textAllCaps="true"
             android:layout_centerInParent="true"
             android:layout_margin="5dp"
-            android:visibility="gone"
-            android:text="For any complaints click here to Download Pakistan Citizen Portal App"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:text="https://play.google.com/store/apps/details?id=com.govpk.citizensportal"
             android:textSize="13sp" />
 
-        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+        <!--<com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
             android:id="@+id/tvTitleUrdu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,7 +102,7 @@
             android:layout_margin="5dp"
             android:visibility="gone"
             android:text="د شکایتونو لپاره د پاکستان اتباع پورټل اپلیټ ډاونلوډ کولو لپاره دلته کلیک وکړئ"
-            android:textSize="14sp" />
+            android:textSize="14sp" />-->
 
     </RelativeLayout>
 </RelativeLayout>

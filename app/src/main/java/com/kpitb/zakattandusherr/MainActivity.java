@@ -101,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
 
     MediaPlayer mediaPlayer;
 
-    private CustomTextViewForMainPage tvTitle,tvTitleUrdu,tvTitlePashto;
+    private CustomTextViewForMainPage txtComplaint,txtComplaintUrdu,txtComplaintPashto;
+    private RelativeLayout view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
         //BY DEFAULT SHOW LIST IN URDU
         setUpRescyclerViewUrdu();
+        txtComplaintUrdu.setVisibility(View.VISIBLE);
 
         Menu menu = navigationView.getMenu();
         menu.add(0, MENU_EDUCATIONAL_GRANT, Menu.NONE, "زکوٰۃ اسکیمیں").setIcon(R.drawable.zakat_schemz_icon);
@@ -234,9 +236,9 @@ public class MainActivity extends AppCompatActivity {
                         mediaPlayer.start();
                         if (radioUrdu.isChecked() == true)
                         {
-                            tvTitleUrdu.setVisibility(View.VISIBLE);
-                            tvTitlePashto.setVisibility(View.GONE);
-                            tvTitle.setVisibility(View.GONE);
+                            txtComplaintUrdu.setVisibility(View.VISIBLE);
+                            txtComplaint.setVisibility(View.INVISIBLE);
+                            txtComplaintPashto.setVisibility(View.INVISIBLE);
                             setUpRescyclerViewUrdu();
                             navigationView.getMenu().clear();
                             Menu menu = navigationView.getMenu();
@@ -250,9 +252,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else if (radioPashto.isChecked() == true)
                         {
-                            tvTitlePashto.setVisibility(View.VISIBLE);
-                            tvTitle.setVisibility(View.GONE);
-                            tvTitleUrdu.setVisibility(View.GONE);
+                            txtComplaintUrdu.setVisibility(View.INVISIBLE);
+                            txtComplaint.setVisibility(View.INVISIBLE);
+                            txtComplaintPashto.setVisibility(View.VISIBLE);
                             setUpRescyclerViewPashto();
                             navigationView.getMenu().clear();
                             Menu menu = navigationView.getMenu();
@@ -265,9 +267,9 @@ public class MainActivity extends AppCompatActivity {
                             dialog.dismiss();
                         }
                         else {
-                            tvTitle.setVisibility(View.VISIBLE);
-                            tvTitlePashto.setVisibility(View.GONE);
-                            tvTitleUrdu.setVisibility(View.GONE);
+                            txtComplaintUrdu.setVisibility(View.INVISIBLE);
+                            txtComplaint.setVisibility(View.VISIBLE);
+                            txtComplaintPashto.setVisibility(View.INVISIBLE);
                             setUpRescyclerViewEnglish();
                             navigationView.getMenu().clear();
                             Menu menu = navigationView.getMenu();
@@ -305,9 +307,10 @@ public class MainActivity extends AppCompatActivity {
         language_chnge = findViewById(R.id.change_language);
         img_close_drawer = (ImageView)navHeader.findViewById(R.id.close_drawer_btn);
         change_lang = (ImageView)navHeader.findViewById(R.id.change_lang);
-        tvTitle = findViewById(R.id.tvTitle);
-        tvTitleUrdu = findViewById(R.id.tvTitleUrdu);
-        tvTitlePashto = findViewById(R.id.tvTitlePashto);
+        txtComplaint = findViewById(R.id.txtComplaint);
+        txtComplaintUrdu = findViewById(R.id.txtComplaintUrdu);
+        txtComplaintPashto = findViewById(R.id.txtComplaintPashto);
+        view = findViewById(R.id.view);
 
         img_close_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -317,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        tvTitle.setOnClickListener(new View.OnClickListener() {
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String appPackageName = "com.govpk.citizensportal";
@@ -331,7 +334,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        tvTitleUrdu.setOnClickListener(new View.OnClickListener() {
+     /*   tvTitleUrdu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String appPackageName = "com.govpk.citizensportal";
@@ -357,7 +360,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
                 }
             }
-        });
+        });*/
     }
 
     private void setUpNavigationView() {
@@ -502,9 +505,9 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(View v) {
                                 mediaPlayer.start();
                                 if (radioUrdu.isChecked() == true) {
-                                    tvTitleUrdu.setVisibility(View.VISIBLE);
-                                    tvTitle.setVisibility(View.GONE);
-                                    tvTitlePashto.setVisibility(View.GONE);
+                                    txtComplaintUrdu.setVisibility(View.VISIBLE);
+                                    txtComplaint.setVisibility(View.INVISIBLE);
+                                    txtComplaintPashto.setVisibility(View.INVISIBLE);
                                     navigationView.getMenu().clear();
                                     Menu menu = navigationView.getMenu();
                                     menu.add(0, MENU_EDUCATIONAL_GRANT, Menu.NONE, "زکوٰۃ اسکیمیں").setIcon(R.drawable.zakat_schemz_icon);
@@ -518,9 +521,9 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 else if (radioPashto.isChecked() == true)
                                 {
-                                    tvTitleUrdu.setVisibility(View.GONE);
-                                    tvTitle.setVisibility(View.GONE);
-                                    tvTitlePashto.setVisibility(View.VISIBLE);
+                                    txtComplaintUrdu.setVisibility(View.INVISIBLE);
+                                    txtComplaint.setVisibility(View.INVISIBLE);
+                                    txtComplaintPashto.setVisibility(View.VISIBLE);
                                     navigationView.getMenu().clear();
                                     Menu menu = navigationView.getMenu();
                                     menu.add(0, MENU_EDUCATIONAL_GRANT, Menu.NONE, "د زکات پلانونه").setIcon(R.drawable.zakat_schemz_icon);
@@ -533,9 +536,9 @@ public class MainActivity extends AppCompatActivity {
                                     dialog.dismiss();
                                 }
                                 else {
-                                    tvTitleUrdu.setVisibility(View.GONE);
-                                    tvTitle.setVisibility(View.VISIBLE);
-                                    tvTitlePashto.setVisibility(View.GONE);
+                                    txtComplaintUrdu.setVisibility(View.INVISIBLE);
+                                    txtComplaint.setVisibility(View.VISIBLE);
+                                    txtComplaintPashto.setVisibility(View.INVISIBLE);
                                     navigationView.getMenu().clear();
                                     Menu menu = navigationView.getMenu();
                                     menu.add(0, MENU_EDUCATIONAL_GRANT, Menu.NONE, "Zakat Schemes").setIcon(R.drawable.zakat_schemz_icon);
