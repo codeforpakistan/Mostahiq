@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#fff</color>
+    <color name="myColorNew">#00BFA5</color>
 
     //from assami
     <color name="bgBackSideColor">#f4f0ff</color>
@@ -34,7 +35,7 @@
 
     <color name="orange50">#eb8d4c</color>
     <color name="orange">#eb8d4c</color>
-    <color name="yellow50">#ffc200</color>
+    <color name="yellow50">#F9A825</color>
     <color name="red50">#97272E</color>
     <color name="blue500">#2196F3</color>
     <color name="blue700">#1976D2</color>

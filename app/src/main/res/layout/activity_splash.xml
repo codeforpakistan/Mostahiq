@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/splashKpGov"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:tint="@color/color2"
-        app:srcCompat="@drawable/kpgov" />
+        app:srcCompat="@drawable/zakat_deptt_logo" />
 
     <ImageView
         android:id="@+id/ivSplash"

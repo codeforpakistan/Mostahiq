@@ -37,11 +37,11 @@
                     android:layout_gravity="top|right"
                     android:layout_marginLeft="13dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_gravity="right"
                         android:gravity="right"
@@ -67,7 +67,7 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
@@ -105,11 +105,11 @@
                     android:layout_gravity="top|right"
                     android:layout_marginLeft="13dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/elgibelity_head_u"
@@ -131,7 +131,7 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
@@ -169,11 +169,11 @@
                     android:layout_gravity="top|right"
                     android:layout_marginLeft="13dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/how_to_apply_label_u"
@@ -194,7 +194,7 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="serif"
@@ -223,7 +223,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent">
 
-            <com.kpitb.zakatandusher.utility.CustomTextView
+            <com.kpitb.zakattandusherr.utility.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"

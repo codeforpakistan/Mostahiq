@@ -24,7 +24,7 @@
             android:layout_centerVertical="true"
             />
 
-        <ImageView
+     <!--   <ImageView
             android:id="@+id/kpkitb_img"
             android:visibility="visible"
             android:src="@drawable/ic_kpitb"
@@ -34,7 +34,7 @@
             android:layout_marginRight="2dp"
             android:layout_centerVertical="true"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp" />-->
         <ImageView
             android:padding="8dp"
             android:src="@drawable/white_logo_toolbar"
@@ -43,7 +43,7 @@
             android:layout_alignParentTop="true"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_toLeftOf="@+id/kpkitb_img"/>
+            android:layout_toLeftOf="@+id/change_language"/>
 
 
     </RelativeLayout>

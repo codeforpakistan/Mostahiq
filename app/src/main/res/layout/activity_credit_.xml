@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F2F1"
+    tools:context=".Credit_Activity">
+
+    <include layout="@layout/main_toolbar"
+        android:id="@+id/toolbar"></include>
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/first_linear"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/wave_shape_design">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CREDITS"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FBC02D" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/emoji"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/second_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/first_linear"
+        android:layout_margin="6dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click on the specific organization for more details !"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:gravity="bottom"
+            android:textColor="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:id="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:orientation="horizontal"
+            android:background="@drawable/new_shape_transparent"
+            android:padding="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/star"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#FBC02D"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="5dp"
+                android:text="Zakat, Ushr, Social Welfare, Special Education &amp; Women Empowerment Department, Khyber Pakhtunkhwa"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_below="@+id/one"
+            android:orientation="horizontal"
+            android:background="@drawable/new_shape_transparent"
+            android:padding="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/star"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#FBC02D"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="5dp"
+                android:text="Khyber Pakhtunkhwa Information Technology Board (KPITB)"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+        android:id="@+id/three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/two"
+        android:orientation="horizontal"
+        android:background="@drawable/new_shape_transparent"
+        android:padding="5dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/star"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#FBC02D"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="5dp"
+            android:text="Code For Pakistan"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_below="@+id/three"
+            android:orientation="horizontal"
+            android:background="@drawable/new_shape_transparent"
+            android:padding="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/star"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#FBC02D"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="5dp"
+                android:text="Durshal - Peshawar"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

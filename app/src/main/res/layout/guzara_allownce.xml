@@ -8,8 +8,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <include layout="@layout/main_toolbar"
-        android:id="@+id/toolbar"></include>
+    <include layout="@layout/main_toolbar_two" android:id="@+id/app_bar"/>
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -30,7 +30,7 @@
 
                 <RelativeLayout
                     android:id="@+id/btn_appointment"
-                    android:layout_width="wrap_content"
+                    android:layout_width="162dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
@@ -40,20 +40,54 @@
                     android:padding="8dp"
                     android:paddingHorizontal="32dp"
                     android:visibility="visible"
+                    android:layout_marginLeft="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:drawableLeft="@drawable/ic_click"
                         android:drawablePadding="12dp"
                         android:onClick="DownloadForm"
-                        android:text="Click here to get form"
+                        android:text="Download Form"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        tools:ignore="OnClick" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btn_coming_soon"
+                    android:layout_width="162dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/color3"
+                    android:elevation="12dp"
+                    android:gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:paddingHorizontal="32dp"
+                    android:layout_marginRight="8dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableLeft="@drawable/ic_click"
+                        android:drawablePadding="12dp"
+                        android:text="Coming Soon"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
                         android:textColor="@color/white"
                         tools:ignore="OnClick" />
 
@@ -83,16 +117,18 @@
                             android:layout_gravity="top|left"
                             android:layout_marginLeft="13dp"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/round_corners_btn_2"
+                            android:background="@drawable/round_corners_btn_two"
                             android:backgroundTint="@color/white"
                             android:padding="4dp">
 
-                            <com.kpitb.zakatandusher.utility.CustomTextView
+                            <com.kpitb.zakattandusherr.utility.CustomTextView
                                 android:layout_width="wrap_content"
+                                android:id="@+id/txt3"
                                 android:layout_height="wrap_content"
                                 android:text="@string/elgibelity_head"
                                 android:textColor="@color/color3"
-                                android:textSize="16sp" />
+                                android:textSize="17sp"
+                                android:textStyle="bold"/>
                         </FrameLayout>
 
                         <LinearLayout
@@ -108,15 +144,17 @@
                             tools:ignore="MissingConstraints">
 
 
-                            <com.kpitb.zakatandusher.utility.CustomTextView
+                            <com.kpitb.zakattandusherr.utility.CustomTextView
                                 android:layout_width="0dp"
+                                android:id="@+id/txt4"
                                 android:layout_height="match_parent"
                                 android:layout_weight="8"
                                 android:fontFamily="serif"
                                 android:gravity="center|left"
+                                android:justificationMode="inter_word"
                                 android:text="@string/guzara_eligibility"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="12sp" />
+                                android:textSize="15sp" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -146,16 +184,18 @@
                             android:layout_gravity="top|left"
                             android:layout_marginLeft="13dp"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/round_corners_btn_2"
+                            android:background="@drawable/round_corners_btn_two"
                             android:backgroundTint="@color/white"
                             android:padding="4dp">
 
-                            <com.kpitb.zakatandusher.utility.CustomTextView
+                            <com.kpitb.zakattandusherr.utility.CustomTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/how_to_apply_label"
+                                android:id="@+id/txt5"
                                 android:textColor="@color/color3"
-                                android:textSize="16sp" />
+                                android:textStyle="bold"
+                                android:textSize="17sp" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -170,25 +210,29 @@
                             tools:ignore="MissingConstraints">
 
 
-                            <com.kpitb.zakatandusher.utility.CustomTextView
+                            <com.kpitb.zakattandusherr.utility.CustomTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="serif"
                                 android:gravity="center|left"
+                                android:id="@+id/txt6"
+                                android:justificationMode="inter_word"
                                 android:text="@string/text_how_to_apply"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="12sp" />
+                                android:textSize="15sp" />
 
-                            <com.kpitb.zakatandusher.utility.CustomTextView
+                            <com.kpitb.zakattandusherr.utility.CustomTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
+                                android:id="@+id/txt7"
                                 android:fontFamily="serif"
                                 android:gravity="center|left"
+                                android:justificationMode="inter_word"
                                 android:text="@string/bullets_h_t_apply"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="12sp" />
+                                android:textSize="15sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -218,16 +262,18 @@
                             android:layout_gravity="top|left"
                             android:layout_marginLeft="13dp"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/round_corners_btn_2"
+                            android:background="@drawable/round_corners_btn_two"
                             android:backgroundTint="@color/white"
                             android:padding="4dp">
 
-                            <com.kpitb.zakatandusher.utility.CustomTextView
+                            <com.kpitb.zakattandusherr.utility.CustomTextView
                                 android:layout_width="wrap_content"
+                                android:id="@+id/txt1"
                                 android:layout_height="wrap_content"
                                 android:text="@string/guzara_allownce"
                                 android:textColor="@color/color3"
-                                android:textSize="16sp" />
+                                android:textStyle="bold"
+                                android:textSize="17sp" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -244,15 +290,17 @@
                             tools:ignore="MissingConstraints">
 
 
-                            <com.kpitb.zakatandusher.utility.CustomTextView
+                            <com.kpitb.zakattandusherr.utility.CustomTextView
+                                android:id="@+id/txt2"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="8"
                                 android:fontFamily="serif"
                                 android:gravity="center|left"
+                                android:justificationMode="inter_word"
                                 android:text="@string/guzara_intro"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="12sp" />
+                                android:textSize="15sp" />
 
                         </LinearLayout>
                     </LinearLayout>

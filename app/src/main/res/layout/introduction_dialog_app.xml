@@ -23,7 +23,7 @@
             android:layout_alignEnd="@+id/topBar"
             android:layout_alignRight="@+id/topBar"
             android:layout_gravity="top|end"
-            android:background="@drawable/round_corners_btn_2"
+            android:background="@drawable/round_corners_btn_two"
             android:padding="10dp">
         </FrameLayout>
 
@@ -32,12 +32,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:background="@drawable/round_corners_btn_2"
+            android:background="@drawable/round_corners_btn_two"
             android:elevation="24dp"
             android:orientation="horizontal"
             android:weightSum="10">
 
-            <com.kpitb.zakatandusher.utility.CustomTextView
+            <com.kpitb.zakattandusherr.utility.CustomTextView
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
@@ -76,7 +76,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.kpitb.zakatandusher.utility.CustomTextView
+                <com.kpitb.zakattandusherr.utility.CustomTextView
                     android:id="@+id/content_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/round_corners_btn_2"
+                android:background="@drawable/round_corners_btn_two"
                 android:fontFamily="sans-serif"
                 android:stateListAnimator="@drawable/state_list_animator_z"
                 android:textColor="#fff"
@@ -103,7 +103,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/field_text"
                 tools:ignore="OnClick">
 
-                <com.kpitb.zakatandusher.utility.CustomTextView
+                <com.kpitb.zakattandusherr.utility.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -120,7 +120,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/round_corners_btn_2"
+                android:background="@drawable/round_corners_btn_two"
                 android:fontFamily="sans-serif"
                 android:stateListAnimator="@drawable/state_list_animator_z"
                 android:textColor="#fff"
@@ -130,7 +130,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/field_text"
                 tools:ignore="OnClick">
 
-                <com.kpitb.zakatandusher.utility.CustomTextView
+                <com.kpitb.zakattandusherr.utility.CustomTextView
                     android:id="@+id/lbl_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

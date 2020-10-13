@@ -10,8 +10,8 @@
         android:layout_height="match_parent"
         android:background="@color/grey">
 
-        <include layout="@layout/main_toolbar"
-            android:id="@+id/toolbar"></include>
+        <include layout="@layout/main_toolbar_two" android:id="@+id/app_bar"/>
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/intro"
@@ -25,7 +25,7 @@
             app:cardCornerRadius="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
@@ -41,16 +41,17 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="صحت کی دیکھ بال (ضلعی سطح)"
                         android:textColor="@color/color3"
-                        android:textSize="16sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </FrameLayout>
 
                 <LinearLayout
@@ -67,19 +68,20 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
                         android:fontFamily="serif"
                         android:gravity="center|right"
+                        android:justificationMode="inter_word"
                         android:text=" یہ ایک صحت کی حفاظت ہے غریب مریضوں کے لئے جو اپنےعلاج کے اخراجات برداشت نہیں کر سکتے۔ حکومت خیبر پختون خوا کے ضلعی ہیڈ کوارٹر ہسپتالوں اور تحصیل ہیڈ کوارٹر ہسپتالوں کو مستحق مریضوں کے طبی علاج کے لئے زکوٰۃ فنڈز مہیا کیے جاتے ہیں.\n
 مریضوں کو مندرجہ ذیل اخراجات کے مطابق صحت کی دیکھ بھال فراہم کی جاتی ہے:
  \nہسپتال کے اندر کا مریض 8  ہزار فی چکر
 \nہسپتال کے باہرکا مریض 4 ہزار فی چکر.
 "
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -111,16 +113,17 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="صحت کی دیکھ بال (صوبائی سطح)"
                         android:textColor="@color/color3"
-                        android:textSize="16sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </FrameLayout>
 
                 <LinearLayout
@@ -136,19 +139,20 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
                         android:fontFamily="serif"
                         android:gravity="center|right"
+                        android:justificationMode="inter_word"
                         android:text=" صوبے میں صوبائی سطح کے بڑے ہسپتالوں کے لئے مالی سال 2017-18ء کے دوران 71.00 ملین روپے مختص کیے گئے.
 مریضوں کو مندرجہ ذیل اخراجات کے مطابق صحت کی دیکھ بال فراہم کی جاتی ہے:
  \nہسپتال کے اندر کا مریض 10ہزارروپے فی چکر
 \nہسپتال کے باہرکا مریض 5 ہزارروپے فی چکر
 "
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -180,16 +184,17 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="اہلیت کا معیار"
                         android:textColor="@color/color3"
-                        android:textSize="16sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </FrameLayout>
 
                 <LinearLayout
@@ -204,14 +209,15 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="serif"
                         android:gravity="center|right"
+                        android:justificationMode="inter_word"
                         android:text=" ٓاستحقق کا تعین مریض کے مستقل رہائشی علاقے  کی مقامی زکوٰۃ کمیٹی کرتی ہے۔ "
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -219,7 +225,7 @@
 
         <RelativeLayout
             android:id="@+id/btn_appointment"
-            android:layout_width="wrap_content"
+            android:layout_width="162dp"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
@@ -229,20 +235,54 @@
             android:padding="8dp"
             android:paddingHorizontal="32dp"
             android:visibility="visible"
+            android:layout_marginLeft="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
 
-            <com.kpitb.zakatandusher.utility.CustomTextView
+            <com.kpitb.zakattandusherr.utility.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:drawableLeft="@drawable/ic_click"
                 android:drawablePadding="12dp"
                 android:onClick="DownloadForm"
-                android:text="فارم حاصل کرنے کے لئے یہاں کلک کریں"
+                android:textSize="16sp"
+                android:text="ڈاؤن لوڈ فارم"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                tools:ignore="OnClick" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_coming_soon"
+            android:layout_width="162dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/color3"
+            android:elevation="12dp"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:paddingHorizontal="32dp"
+            android:layout_marginRight="8dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
+
+            <com.kpitb.zakattandusherr.utility.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/ic_click"
+                android:drawablePadding="12dp"
+                android:text="جلد آرہا ہے"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 tools:ignore="OnClick" />
 

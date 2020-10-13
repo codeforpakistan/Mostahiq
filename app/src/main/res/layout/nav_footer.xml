@@ -17,7 +17,8 @@
             android:layout_width="175dp"
             android:layout_height="100dp"
             android:gravity="center"
-            android:src="@drawable/kpitbbanner"
+            android:layout_margin="4dp"
+            android:src="@drawable/zakat_deptt_logo"
             />
 
     </LinearLayout>

@@ -17,8 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/main_toolbar"
-            android:id="@+id/toolbar"></include>
+        <include layout="@layout/main_toolbar_two" android:id="@+id/app_bar"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/intro"
@@ -32,7 +31,7 @@
             app:cardCornerRadius="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
@@ -48,16 +47,17 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="واده مرسته"
                         android:textColor="@color/color3"
-                        android:textSize="16sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </FrameLayout>
 
                 <LinearLayout
@@ -74,15 +74,16 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
+                        android:justificationMode="inter_word"
                         android:fontFamily="serif"
                         android:gravity="center|right"
                         android:text=" واده مرستې مقصد دا دى چې هغه ښځو مالى مرستې وشى. کمى چې دا واده وس نه لرى. هغوى ته ٢٠٠٠٠ روپئ ورکولى شى. "
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -114,16 +115,17 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="د وړتیا معيارونه"
                         android:textColor="@color/color3"
-                        android:textSize="16sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </FrameLayout>
 
                 <LinearLayout
@@ -139,15 +141,16 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
                         android:fontFamily="serif"
+                        android:justificationMode="inter_word"
                         android:gravity="center|right"
                         android:text=" هغه ښځه چى وس نه لرى غريبه وى. "
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -179,16 +182,17 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="څرنګه غوښتنه وکړۍ"
                         android:textColor="@color/color3"
-                        android:textSize="16sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </FrameLayout>
 
                 <LinearLayout
@@ -202,14 +206,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="MissingConstraints">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="serif"
                         android:gravity="center|right"
+                        android:justificationMode="inter_word"
                         android:text=" مستحق زنانه لوکل زکات کميټې نه د واده لپاره د مرستې غوښتنه کولى شى. لوکل زکات کميټې به د غوښتونکي خواست ګورى. او د نور تفتیش لپاره به يې ولسوالۍ کميټې ته ليږى. هغوى به غوښتونکي لپاره فنډز راوباسي. او لوکل زکات کميټې به پيسى غوښتونکي ته ورکوى. "
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -217,7 +222,7 @@
 
         <RelativeLayout
             android:id="@+id/btn_appointment"
-            android:layout_width="wrap_content"
+            android:layout_width="162dp"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
@@ -227,24 +232,59 @@
             android:padding="8dp"
             android:paddingHorizontal="32dp"
             android:visibility="visible"
+            android:layout_marginLeft="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
 
-            <com.kpitb.zakatandusher.utility.CustomTextView
+            <com.kpitb.zakattandusherr.utility.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:drawableLeft="@drawable/ic_click"
                 android:drawablePadding="12dp"
                 android:onClick="DownloadForm"
-                android:text="د فارم ترلاسه کولو لپاره دلته کلیک وکړئ"
+                android:text="ډاونلوډ فارم"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 tools:ignore="OnClick" />
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_coming_soon"
+            android:layout_width="162dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/color3"
+            android:elevation="12dp"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:paddingHorizontal="32dp"
+            android:layout_marginRight="8dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
+
+            <com.kpitb.zakattandusherr.utility.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/ic_click"
+                android:drawablePadding="12dp"
+                android:text="ډېر ژر"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                tools:ignore="OnClick" />
+
+        </RelativeLayout>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="top"
-            android:background="@drawable/round_corners_btn_2"
+            android:background="@drawable/round_corners_btn_two"
             android:elevation="24dp"
             android:orientation="horizontal">
 
@@ -33,14 +33,15 @@
                 android:orientation="horizontal"
                 android:weightSum="4">
 
-                <com.kpitb.zakatandusher.utility.CustomTextView
+                <com.kpitb.zakattandusherr.utility.CustomTextView
                     android:id="@+id/toolbar_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:padding="10dp"
                     android:scaleType="fitCenter"
+                    android:layout_marginLeft="17dp"
                     android:text="Introduction"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
@@ -51,7 +52,8 @@
                     android:layout_gravity="center"
                     android:layout_weight="2"
                     android:padding="10dp"
-                    android:scaleType="fitCenter"
+                    android:layout_marginRight="17dp"
+                    android:scaleType="fitEnd"
                     android:src="@drawable/taruf_img" />
 
             </LinearLayout>
@@ -87,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/eng"
                     android:text="English"
-                    android:textSize="15sp"
+                    android:textSize="17sp"
                     android:paddingLeft="7dp"
                     android:paddingRight="7dp"
                     android:textColor="@color/colorPrimaryDark"
@@ -108,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/urdu"
                     android:text="اردو"
-                    android:textSize="15sp"
+                    android:textSize="17sp"
                     android:paddingLeft="7dp"
                     android:paddingRight="7dp"
                     />
@@ -144,12 +146,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:id="@+id/content_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/introduction"
+                        android:textSize="15sp"
                         android:visibility="visible"
+                        android:justificationMode="inter_word"
                         android:textColor="@color/black" />
 
                         <View
@@ -160,13 +164,15 @@
                             android:background="@color/colorPrimaryDark"
                             android:layout_below="@+id/content_text"/>
 
-                        <com.kpitb.zakatandusher.utility.CustomTextView
+                        <com.kpitb.zakattandusherr.utility.CustomTextView
                             android:id="@+id/content_text2"
                             android:visibility="visible"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/introduction_app"
                             android:textColor="@color/black"
+                            android:justificationMode="inter_word"
+                            android:textSize="15sp"
                             android:layout_below="@+id/my_view"
                             android:layout_marginTop="15dp"/>
 
@@ -189,7 +195,7 @@
                     android:layout_width="140dp"
                     android:layout_height="40dp"
                     android:layout_marginRight="8dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:fontFamily="sans-serif"
                     android:stateListAnimator="@drawable/state_list_animator_z"
                     android:textColor="#fff"
@@ -197,7 +203,7 @@
                     tools:ignore="OnClick"
                     android:visibility="gone">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -213,14 +219,14 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="8dp"
                     android:layout_toRightOf="@+id/btn_never_ask"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:fontFamily="sans-serif"
                     android:stateListAnimator="@drawable/state_list_animator_z"
                     android:textColor="#fff"
                     android:textStyle="bold"
                     tools:ignore="OnClick">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:id="@+id/lbl_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -228,7 +234,7 @@
                         android:gravity="center"
                         android:text="Close"
                         android:textColor="#fff"
-                        android:textSize="14sp" />
+                        android:textSize="17sp" />
 
                 </RelativeLayout>
             </RelativeLayout>

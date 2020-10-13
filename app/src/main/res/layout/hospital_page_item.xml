@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#F5F5F5"
+    android:id="@+id/card_hospital_item"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="7dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="8dp"
+    app:cardUseCompatPadding="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+    <ImageView
+        android:id="@+id/hspital_img"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/hspital_icon"
+        android:tint="@color/colorPrimaryDark"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp" />
+
+    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_toRightOf="@+id/hspital_img"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/hspital_img"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/seperator" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Hospital_DetailPage">
+
+    <include layout="@layout/main_toolbar" android:id="@+id/app_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_bar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                android:id="@+id/district_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="12dp"
+                android:text="District Offices Details"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_hospital_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/district_details"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="#F5F5F5"
+                app:cardCornerRadius="4dp"
+                android:layout_marginHorizontal="4dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/district_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="12dp"
+                        android:text="District Name"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="District Zakat Officer Name:"
+                        android:textColor="@color/yellow50"
+                        android:layout_marginLeft="12dp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/dzo_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="DZO Name"
+                        android:background="@drawable/round_filled4"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Officer Number"
+                        android:textColor="@color/yellow50"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginLeft="12dp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/dzo_contact_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="2423234"
+                        android:background="@drawable/round_filled4"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="District Chairman"
+                        android:textColor="@color/yellow50"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginLeft="12dp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/dzc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="District Chairman"
+                        android:background="@drawable/round_filled4"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="District Chairman Number"
+                        android:textColor="@color/yellow50"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginLeft="12dp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/dzc_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="2044242"
+                        android:background="@drawable/round_filled4"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Number of Local Zakat Communities"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/yellow50"
+                        android:layout_marginLeft="12dp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/dlzcs_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="Number of DLZCS"
+                        android:background="@drawable/round_filled4"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/dlzcs_layout_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:background="@drawable/round_corners_btn_two"
+                        android:layout_margin="18dp"
+                        android:padding="0dp">
+
+
+                        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                            android:id="@+id/dlzcs_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Find Local Zakat Committees"
+                            android:padding="14dp"
+                            android:textColor="@color/yellow50"
+                            android:layout_centerVertical="true"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/call_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_corners_btn_two"
+                        android:layout_margin="18dp"
+                        android:padding="0dp">
+
+                        <ImageButton
+                            android:id="@+id/call_dzo_phone_no"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/ic_phone"
+                            android:backgroundTint="@color/yellow50"
+                            android:elevation="12dp"/>
+
+                        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                            android:id="@+id/dzo_contact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/call_dzo_phone_no"
+                            android:textStyle="bold"
+                            android:text="Contact District Zakat Officer"
+                            android:padding="4dp"
+                            android:textColor="@color/yellow50"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/card_hospital_item"
+                android:layout_margin="4dp">
+
+                <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    android:id="@+id/txt_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Click Location Button to find District Zakat Officer Address:"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:id="@+id/location_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corners_btn_new"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="0dp">
+                    <ImageButton
+                        android:id="@+id/maps"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/goole_maps"
+                        android:elevation="12dp"/>
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/location_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/maps"
+                        android:textStyle="bold"
+                        android:text="Find Office Location"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

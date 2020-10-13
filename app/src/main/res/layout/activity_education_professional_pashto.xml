@@ -7,8 +7,17 @@
     android:background="@drawable/gradient_bg"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include layout="@layout/main_toolbar"
-        android:id="@+id/toolbar"></include>
+    <include layout="@layout/main_toolbar_two" android:id="@+id/app_bar"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,16 +53,17 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="تعليمى ګامونه (هنري)"
                         android:textColor="@color/color3"
-                        android:textSize="16sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </FrameLayout>
 
                 <LinearLayout
@@ -70,15 +80,16 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
                         android:fontFamily="serif"
+                        android:justificationMode="inter_word"
                         android:gravity="center|right"
                         android:text="د غریب ځوانانو د عاید لاس ته راوړلو لپاره ، د زکات او عشر څانګې یو ځانګړی پروګرام پیل کړی دی. د دې هراړخیز برنامې له لارې زده کونکو ته د ولسوالیو د ښو تخنیکي مسلکي موسسو له لارې بازارموندنې سوداګرۍ کې وړیا تخنیکي روزنه ورکول کیږي. د روزنې په جریان کې ، هر روزونکي ته د میاشتې لپاره دوه زره روپۍ او د کورس تکمیل شوي سند سره د اوزارونو پیرود لپاره اته زره روپۍ هم د دوی د بریالۍ روزنې په پای کې ورکړل شوې دي."
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -111,16 +122,17 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="د وړتیا معیارونه"
                         android:textColor="@color/color3"
-                        android:textSize="16sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </FrameLayout>
 
                 <LinearLayout
@@ -136,15 +148,16 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
                         android:fontFamily="serif"
+                        android:justificationMode="inter_word"
                         android:gravity="center|right"
                         android:text="استحقق د ځایی زکات کمیټو لخوا ټاکل شوی او د ښوونې او روزنې انستیتیوت د بورسونو کمیټې لخوا د ولسوالۍ د زکات کمیتې رییس ، د زکات افسر ، د مسلکي روزنې انستیتوت ، د ټولګیو ښوونکی او د ولسوالۍ د زکات کمیټې لخوا تائید شوی دی."
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -177,16 +190,17 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/round_corners_btn_2"
+                    android:background="@drawable/round_corners_btn_two"
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="څرنګه غوښتنه وکړۍ"
                         android:textColor="@color/color3"
-                        android:textSize="16sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </FrameLayout>
 
                 <LinearLayout
@@ -201,14 +215,15 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandusher.utility.CustomTextView
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="serif"
                         android:gravity="center|right"
+                        android:justificationMode="inter_word"
                         android:text="زده کوونکی کولی شي د خپلې ادارې له لارې د وقایې ٹیکنیکل لپاره د ولسوالۍ زکات کمیټې ته غوښتنه وکړي ، د اړونده زکات کمیتې لخوا د استحقق پریکړې تابع کیږي. د ولسوالۍ د زکات کمیټه تخنیکي نهادونو ته د مستحق زده کونکو لپاره د تخفیف لپاره فنډونه خپروي."
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -216,7 +231,7 @@
 
         <RelativeLayout
             android:id="@+id/btn_appointment"
-            android:layout_width="wrap_content"
+            android:layout_width="162dp"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
@@ -226,27 +241,61 @@
             android:padding="8dp"
             android:paddingHorizontal="32dp"
             android:visibility="visible"
+            android:layout_marginLeft="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
 
-
-            <com.kpitb.zakatandusher.utility.CustomTextView
-                android:id="@+id/btn_eng"
+            <com.kpitb.zakattandusherr.utility.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:drawableLeft="@drawable/ic_click"
                 android:drawablePadding="12dp"
                 android:onClick="DownloadForm"
-                android:text="د فارم ترلاسه کولو لپاره دلته کلیک وکړئ"
+                android:text="ډاونلوډ فارم"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:textColor="@color/white"
-                android:visibility="visible"
                 tools:ignore="OnClick" />
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/btn_coming_soon"
+            android:layout_width="162dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/color3"
+            android:elevation="12dp"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:paddingHorizontal="32dp"
+            android:layout_marginRight="8dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
+
+            <com.kpitb.zakattandusherr.utility.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/ic_click"
+                android:drawablePadding="12dp"
+                android:text="ډېر ژر"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                tools:ignore="OnClick" />
+
+        </RelativeLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

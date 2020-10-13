@@ -17,7 +17,7 @@
         app:layout_constraintVertical_bias="0.65"></androidx.recyclerview.widget.RecyclerView>
 
 
-    <include layout="@layout/main_toolbar_two" android:id="@+id/app_bar"/>
+    <include layout="@layout/main_toolbar" android:id="@+id/app_bar"/>
 
     <View
         android:background="@drawable/footer_gradient"

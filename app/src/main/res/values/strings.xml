@@ -3,26 +3,20 @@
     <string name="openDrawer">OPEN_DRAWER</string>
     <string name="closeDrawer">CLOSE_DRAWER</string>
 
-    <string name="guzara_allownce">GUZARA ALLOWANCE</string>
+    <string name="guzara_allownce">Guzara Allowance</string>
     <string name="guzara_allownce_urdu">گوزارا الاؤنس</string>
     <string name="guzara_intro">Guzara allowance is a monthly grant meant for the chronic poor. It aims to safeguard them from hunger which is both cause and manifestation of extreme poverty. Its current monthly rate is Rs. 2000 and is paid by the local Zakat committee of the area of residence of the deserving (Mustahiq) person.</string>
     <string name="guzara_intro_urdu">گوزآرا الاؤنس ایک ماہانہ گرانٹ ہے جس کا مطلب دائمی غریبوں کے لئے ہے. اس کا مقصد ان کی بھوک سے تحفظ کرنا ہے جو دونوں ہی شدید غربت کا سبب اور اظہار ہے ۔ اس کی موجودہ ماہانہ شرح 2000 روپے ہے اور اس کے لئے مستحق (موسٹہاق) شخص کی رہائش گاہ کے علاقے کی مقامی زکوٰۃ کمیٹی کی طرف سے ادا کی جاتی ہے ۔</string>
     <string name="elgibelity_head">Eligibility Criteria</string>
     <string name="elgibelity_head_urdu">اہلیت کے معیار</string>
-    <string name="guzara_eligibility">1.Istehqaq is determined by Local Zakat Committee of the area of permanent residence of the applicant \n
-        2.  Adult Muslim, living below poverty level with preference to widows and disabled. \n
-        3.  Unemployed. \n
-        4.  Not a habitual beggar</string>
+    <string name="guzara_eligibility">1. Istehqaq is determined by Local Zakat Committee of the area of permanent residence of the applicant.\n2. Adult Muslim, living below poverty level with preference to widows and disabled. \n3. Unemployed. \n4. Not a habitual beggar</string>
     <string name="guzara_eligibility_urdu">1. درخواست گزار کی مستقل رہائش گاہ کے علاقے کی مقامی زکوٰۃ کمیٹی کی طرف سے مقرر کیا گیا ہے.
 2. بالغ مسلمان, بیواؤں اور معذور لوگوں کو ترجیح کے ساتھ غربت کی سطح کے نیچے رہنے والے.
 3. بے روزگار ۔
 4. ایک بے عادت نہیں.</string>
     <string name="how_to_apply_label">How to Apply</string>
     <string name="text_how_to_apply">The deserving person can apply to the Chairman, Local Zakat Committee of the area of his/her residence. Local Zakat Committee, keeping in view of the financial condition of the applicant, may determine or reject his/her Istehqaq. Guzara allowance is paid via cross cheque.  </string>
-    <string name="bullets_h_t_apply"> 1. Rs. 415.200 million, 60% of the regular Zakat budget. \n
-        2.  Rs. 1,000/- per month per Mustahiq. \n
-        3.  34600 No of beneficiaries in the financial year 2016-17. \n
-        4.  Istehqaq to provide Zakat assistance is determined by the Local Zakat Committee of the area.</string>
+    <string name="bullets_h_t_apply">1.  Rs. 415.200 million, 60% of the regular Zakat budget.\n2.  Rs. 1,000/- per month per Mustahiq. \n3.  34600 No of beneficiaries in the financial year 2016-17. \n4.  Istehqaq to provide Zakat assistance is determined by the Local Zakat Committee of the area.</string>
     <string name="marriage_allownce">MARRIAGE ASSISTANCE</string>
     <string name="marriage_intro">The aim of marriage grant is to provide financial assistance to the unmarried women who or their guardians cannot afford marriage expenses. Its current rate is 20,000 PKR.</string>
     <string name="marriage_eligibility">Any poor, needy and deserving woman or her parent/guardian can apply for this grant.</string>
@@ -32,7 +26,7 @@
     <string name="edu_general_eligibility">Stipends are provided to the poor and deserving students studying in such colleges, universities, polytechnic and other educational and professional institutions in Khyber Pakhtunkhwa that are established or recognized by the Government. Istehqaq is determined by Local Zakat Committees and endorsed by the scholarship committee of the educational institute. Scholarship committee comprises Head of Institution, Class Teacher and a nominee of District Zakat Committee.</string>
     <string name="text_how_to_apply_edu_general">A deserving student can apply to the head of the institution which will process it after determination of Istehqaq by the local Zakat committee. Funds are released by the District Zakat Committee to the concerned educational institution which will make payment to the student.</string>
     <string name="edu_professional_allownce">EDUCATIONAL STIPENDS – TECHNICAL</string>
-    <string name="edu_prof_intro"><![CDATA[In order to make the poor youth an earning hand, Zakat & Ushr department has initiated a special program. Through this comprehensive program, students are given free technical training in market-oriented trades through well-known technical vocational institutions of the Districts. During the training, Rs. 2000/- per month is given to each trainee and Rs. 8,000/- for the purchase of tools along with course completion certificate are also given at the end of their successful training.]]></string>
+    <string name="edu_prof_intro">In order to make the poor youth an earning hand, Zakat and Ushr department has initiated a special program. Through this comprehensive program, students are given free technical training in market-oriented trades through well-known technical vocational institutions of the Districts. During the training, Rs. 2000/- per month is given to each trainee and Rs. 8,000/- for the purchase of tools along with course completion certificate are also given at the end of their successful training.</string>
     <string name="edu_prof_eligibility">Istehqaq is determined by Local Zakat Committees and endorsed by the scholarship committee of the educational institute comprising Chairman District Zakat Committee, District Zakat Officer, Principal Vocational Training Institute, a Class Teacher and one member District Zakat Committee.</string>
     <string name="text_how_to_apply_edu_prof">The student can apply to the District Zakat Committee on the prescribed form for Stipends Technical through his/her institution, subject to a determination of Istehqaq by the Local Zakat Committee concerned. The District Zakat Committee releases funds to the Technical institutions for stipends to deserving students.</string>
     <string name="education_general_allownce_u">تعلیمی گرانٹ (عام)</string>
@@ -47,11 +41,7 @@
     <string name="edu_prof_intro_u"><![CDATA[غریب نوجوانوں کو ایک کمائی کے ہاتھ بنانے کے لئے, زکوٰۃ اور عشر محکمہ ایک خصوصی پروگرام شروع کر دیا ہے. اس جامع پروگرام کے ذریعے ، طلباء کو اضلاع کے معروف ٹیکنیکل پیشہ ورانہ اداروں کے ذریعے مارکیٹ پر مبنی تجارت میں مفت ٹیکنیکل تربیت دی جاتی ہے. تربیت کے دوران ، فی مہینہ 2000 روپے ہر ایک کے لئے دیا جاتا ہے اور اس کے ساتھ ساتھ آلات کی خریداری کے لئے 8,000 روپے کے لئے ، کورس کے مکمل سرٹیفکیٹ ان کے کامیاب تربیت کے اختتام پر بھی دیا جاتا ہے.]]></string>
     <string name="edu_prof_eligibility_u">استحاق کا تعین مقامی زکوٰۃ کمیٹیوں کے ذریعہ کیا جاتا ہے اور چیئرمین ڈسٹرکٹ زکوٰۃ کمیٹی ، ڈسٹرکٹ زکوٰۃ آفیسر ، پرنسپل ووکیشنل ٹریننگ انسٹی ٹیوٹ ، کلاس ٹیچر اور ایک ممبر ڈسٹرکٹ زکوٰۃ کمیٹی پر مشتمل تعلیمی انسٹی ٹیوٹ کی اسکالرشپ کمیٹی کے ذریعہ اس کی تائید ہوتی ہے۔</string>
     <string name="text_how_to_apply_edu_prof_u">طالب علم کو اس کے ادارے کے ذریعہ مقرر کردہ فارم کے لئے مقررہ شکل میں ضلع زکوٰۃ کمیٹی پر لاگو کر سکتے ہیں ، جس میں متعلقہ مقامی زکوٰۃ کمیٹی کی جانب سے تشویش کا تعین کیا گیا ہے. ضلع زکوٰۃ کمیٹی مستحق طلباء کے لئے ٹیکنیکل اداروں کو فنڈز جاری کرتی ہے۔</string>
-    <string name="introduction"><![CDATA[The Government of Pakistan introduced Zakat system in the country for the first time in 1980 through an Ordinance. \n \n
-     Till 1994, the system worked under the administrative control of provinces. \n \n
-     In July, 1994 it was federalized and went  under the direct supervision of Federal Govt: for two and a half years. \n \n
-     In 1997, the centralized control of the Federal Govt: was done away with and operations of Zakat system was entrusted to Provincial Zakat Administrations.  \n \n
-     In the wake of 18th constitutional amendment, Zakat system was devolved to the Provinces. Certain matters already being dealt with by the Ministry of Zakat and  Ushr have been transferred to Zakat & Ushr Department, Khyber Pakhtunkhwa]]></string>
+    <string name="introduction"><![CDATA[The Government of Pakistan introduced Zakat system in the country for the first time in 1980 through an Ordinance. \n \nTill 1994, the system worked under the administrative control of provinces. \n \nIn July, 1994 it was federalized and went  under the direct supervision of Federal Govt: for two and a half years. \n \nIn 1997, the centralized control of the Federal Govt: was done away with and operations of Zakat system was entrusted to Provincial Zakat Administrations.  \n \nIn the wake of 18th constitutional amendment, Zakat system was devolved to the Provinces. Certain matters already being dealt with by the Ministry of Zakat and  Ushr have been transferred to Zakat & Ushr Department, Khyber Pakhtunkhwa]]></string>
     <string name="title_activity_district_zakat_detail">DistrictZakatDetail</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -152,21 +142,13 @@
     <string name="contact_number">Contact No:</string>
     <string name="text_to_call">This action will let you contact the listed focal person.</string>
     <string name="proceed_text">Do you want to proceed?</string>
-    <string name="introduction_app">Mustahiq application is an informatory platform for public awareness about different Schemes of Zakat and Ushr Department. \n \n
-        The application include information about District Zakat Committees (DZC) and Local Zakat Committees (LZC) within districts with focal person contact numbers \n \n
-        The application also list provincial hospitals list from where public can get relief using Zakat and Ushr Department schemes \n \n
-        Furthermore the application include list of schemes currently offered by Zakat and Ushr department for financial assistance to needy."</string>
+    <string name="introduction_app">Mustahiq application is an informatory platform for public awareness about different Schemes of Zakat and Ushr Department. \n \nThe application include information about District Zakat Committees (DZC) and Local Zakat Committees (LZC) within districts with focal person contact numbers \n \nThe application also list provincial hospitals list from where public can get relief using Zakat and Ushr Department schemes \n \nFurthermore the application include list of schemes currently offered by Zakat and Ushr department for financial assistance to needy."</string>
     <string name="deeni_madaris">Deeni Madaris</string>
-    <string name="deeni_madaris_intro"><![CDATA[Educational Stipend (Deeni Madaris) is provided to the deserving students acquiring religious education. The aim is to help them continue their studies in accordance with the Islamic tenets and not to indulged in anti-state or anti-society activities. It includes a grant for the Madrasa administration to meet accommodation and food expenses of the students.  \n \n
-    Rates of the scholarships are as under:- \n
-    \tDarja Salasa, Saniya and Arba: \n
-     \t\t\t\tRs.2000/- per month. \n
-    \tDarja Khamsa, Sadsa, Mokof e Alyh and Dura Hades: \n \t\t\t\tRs.3000/- per month.]]></string>
+    <string name="deeni_madaris_intro"><![CDATA[Educational Stipend (Deeni Madaris) is provided to the deserving students acquiring religious education. The aim is to help them continue their studies in accordance with the Islamic tenets and not to indulged in anti-state or anti-society activities. It includes a grant for the Madrasa administration to meet accommodation and food expenses of the students. \n \nRates of the scholarships are as under:- \nDarja Salasa, Saniya and Arba:\nRs. 2000/- per month.\nDarja Khamsa, Sadsa, Mokof e Alyh and Dura Hades: \nRs. 3000/- per month.]]></string>
     <string name="deeni_madaris_eligibility">Stipends are provided to the deserving students studying in Deeni Madaris which are registered with Zakat Department and are cleared from the Khyber Pakhtunkhwa Home Department. Istehqaq of students is determined by Local Zakat Committees and endorsed by the scholarship committee of the Deeni Madaris comprising Head of Institution, class teacher and nominee of District Zakat Committee.</string>
     <string name="text_how_to_apply_deni_madaris">A deserving student can apply to the head of the institution (Mohtamim) which will process it after determination of Istehqaq by the local Zakat committee. Funds are released by the District Zakat Committee to the concerned Deeni M</string>
     <string name="health_care_a">Health Care (District Level)</string>
-    <string name="health_care_a_intro">This is a health safeguard for poor patients who cannot afford expenses for their treatment. Zakat funds for medical treatment of the deserving (Mustahiq) patients are provided to district headquarters hospitals and tehsil headquarter hospitals of Government of Khyber Pakhtunkhwa. \n \n
-        The patients are provided health care as per following expenses: \n
+    <string name="health_care_a_intro">This is a health safeguard for poor patients who cannot afford expenses for their treatment. Zakat funds for medical treatment of the deserving (Mustahiq) patients are provided to district headquarters hospitals and tehsil headquarter hospitals of Government of Khyber Pakhtunkhwa. \n \nThe patients are provided health care as per following expenses: \n
         Indoor patients \t\t\t\tRs. 8,000/- per visit \n
         Outdoor patients \t\t\t\tRs. 4,000/- per visit</string>
     <string name="health_care_b">Health Care (Provincial Level)</string>

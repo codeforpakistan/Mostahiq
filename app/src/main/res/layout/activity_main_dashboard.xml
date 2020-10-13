@@ -1,30 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_bg">
 
+    <include layout="@layout/main_toolbar_two" android:id="@+id/app_bar"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/resyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="56dp"
-        android:padding="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar"
-        app:layout_constraintVertical_bias="0.65"></androidx.recyclerview.widget.RecyclerView>
+        android:padding="16dp"
+        android:layout_below="@+id/app_bar"
+        android:layout_above="@+id/view"
+        android:layout_marginBottom="5dp"
+        ></androidx.recyclerview.widget.RecyclerView>
 
+    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtComplaint"
+        android:text="For complaints click below link"
+        android:textAllCaps="true"
+        android:layout_above="@+id/view"
+        />
 
-    <include layout="@layout/main_toolbar" android:id="@+id/app_bar"/>
-
-    <View
+    <RelativeLayout
         android:background="@drawable/footer_gradient"
-        android:layout_width="0dp"
-        android:layout_height="10dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/view"
-        app:layout_constraintVertical_bias="1.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/view">
+
+        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            android:text="For any complaints click here to Download Pakistan Citizen Portal App"
+            android:textSize="13sp" />
+
+        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+            android:id="@+id/tvTitleUrdu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"
+            android:visibility="visible"
+            android:text="یہاں کلک کر کے شکایات کے لیے پاکستانی شہری پورٹل ایپ ڈاؤن لوڈ کریں"
+            android:textSize="14sp" />
+
+        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+            android:id="@+id/tvTitlePashto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            android:text="د شکایتونو لپاره د پاکستان اتباع پورټل اپلیټ ډاونلوډ کولو لپاره دلته کلیک وکړئ"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+</RelativeLayout>
