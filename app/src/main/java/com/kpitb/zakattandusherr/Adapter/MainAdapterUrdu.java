@@ -29,7 +29,7 @@ import java.util.ArrayList;
  */
 
 public class MainAdapterUrdu extends RecyclerView.Adapter<MainAdapterUrdu.ViewHolder> {
-    private Context context;
+    private Context contexts;
     private LayoutInflater inflater;
     int from;
     ArrayList<MainPageModelUrdu> data, filterlist;
@@ -38,7 +38,7 @@ public class MainAdapterUrdu extends RecyclerView.Adapter<MainAdapterUrdu.ViewHo
 
     // create constructor to initialize context and data sent from MainActivity
     public MainAdapterUrdu(Context context, ArrayList<MainPageModelUrdu> data) {
-        this.context = context;
+        this.contexts = context;
         inflater = LayoutInflater.from(context);
         this.data = data;
         mediaPlayer = MediaPlayer.create(context,R.raw.click_sound);
@@ -67,7 +67,7 @@ public class MainAdapterUrdu extends RecyclerView.Adapter<MainAdapterUrdu.ViewHo
             request_label.setText(c.getRequestStatusUrdu());
             //request_label_urdu.setText(c.getRequestStatusUrdu());
             status_image.setImageResource(c.getStatus_icon());
-            backgroud.setBackgroundColor(ContextCompat.getColor(context, c.getColor()));
+            backgroud.setBackgroundColor(ContextCompat.getColor(contexts, c.getColor()));
 
             backgroud.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -75,36 +75,36 @@ public class MainAdapterUrdu extends RecyclerView.Adapter<MainAdapterUrdu.ViewHo
                     mediaPlayer.start();
                     String lable = request_label.getText().toString();
                     if(request_label.getText().equals("زکوٰۃ اسکیمیں")){
-                        Intent i = new Intent(context,ZakatSchemes.class);
+                        Intent i = new Intent(contexts,ZakatSchemes.class);
                         i.putExtra("LANG",lable);
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(contexts);
                         Bundle params = new Bundle();
                         params.putInt("ButtonID",v.getId());
                         btnNam = "زکوٰۃ اسکیمیں";
                         setStatus("زکوٰۃ اسکیمیں");
                         Log.d( "LOGZZZ: ", btnNam);
                         firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(i);
+                        contexts.startActivity(i);
                     }else if(request_label.getText().equals("ضلعی زکوٰۃ دفاتر")){
-                        Intent i = new Intent(context,DistrictsActivity.class);
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                        Intent i = new Intent(contexts,DistrictsActivity.class);
+                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(contexts);
                         Bundle params = new Bundle();
                         params.putInt("ButtonID",v.getId());
                         btnNam = "اضلاع";
                         setStatus("اضلاع");
                         Log.d( "LOGZZZ: ", btnNam);
                         firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(i);
+                        contexts.startActivity(i);
                     }else if(request_label.getText().equals("صوبائی ہسپتال")){
-                        Intent i = new Intent(context,ProvincialActivity.class);
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                        Intent i = new Intent(contexts,ProvincialActivity.class);
+                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(contexts);
                         Bundle params = new Bundle();
                         params.putInt("ButtonID",v.getId());
                         btnNam = "صوبائی ہسپتال";
                         setStatus("صوبائی ہسپتال");
                         Log.d( "LOGZZZ: ", btnNam);
                         firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(i);
+                        contexts.startActivity(i);
                     }
                 }
             });
