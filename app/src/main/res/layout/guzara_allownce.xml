@@ -16,8 +16,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/scrollV"
             tools:ignore="MissingConstraints"
-            android:background="@color/grey"
-            >
+            android:background="@color/grey">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -52,12 +51,13 @@
                         android:layout_centerInParent="true"
                         android:drawableLeft="@drawable/ic_click"
                         android:drawablePadding="12dp"
-                        android:onClick="DownloadForm"
                         android:text="Download Form"
                         android:textSize="13sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        tools:ignore="OnClick" />
+                        tools:ignore="OnClick"
+                        android:onClick="DownloadForm"
+                        />
 
                 </RelativeLayout>
 
@@ -82,10 +82,11 @@
                     <com.kpitb.zakattandusherr.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/coming_soon"
                         android:layout_centerInParent="true"
                         android:drawableLeft="@drawable/ic_click"
                         android:drawablePadding="12dp"
-                        android:text="Coming Soon"
+                        android:text="Apply Online"
                         android:textSize="13sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
@@ -221,18 +222,6 @@
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="15sp" />
 
-                            <com.kpitb.zakattandusherr.utility.CustomTextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:id="@+id/txt7"
-                                android:fontFamily="serif"
-                                android:gravity="center|left"
-                                android:justificationMode="inter_word"
-                                android:text="@string/bullets_h_t_apply"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:textSize="15sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

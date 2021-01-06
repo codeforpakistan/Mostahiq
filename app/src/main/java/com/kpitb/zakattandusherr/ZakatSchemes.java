@@ -102,7 +102,7 @@ public class ZakatSchemes extends AppCompatActivity {
         homePageData = new HomePageModel("گزارا الاؤنس", R.color.orange,
                 R.drawable.ic_children);
         arrayList.add(homePageData);
-        homePageData = new HomePageModel("شادی کی مدد", R.color.yellow50,
+        homePageData = new HomePageModel("شادی الاؤنس", R.color.yellow50,
                 R.drawable.ic_basketball);
         arrayList.add(homePageData);
         homePageData = new HomePageModel("تعلیمی وظائف (عام)", R.color.blue700,

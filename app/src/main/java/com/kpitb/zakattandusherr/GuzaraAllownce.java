@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.ActionBar;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -12,14 +13,21 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.kpitb.zakattandusherr.utility.CustomTextView;
 
 public class GuzaraAllownce extends AppCompatActivity /*implements TextToSpeech.OnInitListener*/ {
     private static final String TAG = "DeeniMadaris";
@@ -39,6 +47,8 @@ public class GuzaraAllownce extends AppCompatActivity /*implements TextToSpeech.
     private boolean flagfemale = false;
     private boolean flagfemale3 = false;
 
+    private RelativeLayout apply_online;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +64,27 @@ public class GuzaraAllownce extends AppCompatActivity /*implements TextToSpeech.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        ImageView change_lang = (ImageView) toolbar.findViewById(R.id.change_language);
+        final ImageView change_lang = (ImageView) toolbar.findViewById(R.id.change_language);
+        final CustomTextView coming_soon = (CustomTextView) findViewById(R.id.coming_soon);
+        coming_soon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(coming_soon);
+            }
+        });
 
         change_lang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(change_lang);
                 DisplayMetrics metrics = getResources().getDisplayMetrics();
                 int width = metrics.widthPixels;
                 int height = metrics.heightPixels;
@@ -183,6 +208,8 @@ public class GuzaraAllownce extends AppCompatActivity /*implements TextToSpeech.
                 dialog.show();
             }
         });
+
+        apply_online = findViewById(R.id.btn_coming_soon);
     }
 
     @Override
@@ -194,6 +221,10 @@ public class GuzaraAllownce extends AppCompatActivity /*implements TextToSpeech.
 
     public void DownloadForm(View view){
         mediaPlayer.start();
+        YoYo.with(Techniques.Landing)
+                .duration(200)
+                .repeat(0)
+                .playOn(view);
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://swkpk.gov.pk/wp-content/uploads/2018/01/Guzara_Allow-Form.pdf"));
         Bundle params = new Bundle();
         params.putInt("ButtonID",view.getId());

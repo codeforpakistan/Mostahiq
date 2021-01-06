@@ -85,7 +85,8 @@
                     android:layout_centerInParent="true"
                     android:drawableLeft="@drawable/ic_click"
                     android:drawablePadding="12dp"
-                    android:text="جلد آرہا ہے"
+                    android:text="آن لائن درخواست"
+                    android:id="@+id/coming_soon"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
@@ -222,20 +223,10 @@
                             android:gravity="center|right"
                             android:id="@+id/txt6"
                             android:justificationMode="inter_word"
-                            android:text="مستحق شخس اپنے علاقے کی مقامی زکوٰۃ کمیٹی کے چیئرمین کو درخواست دے سکتا ہے۔"
+                            android:text="مستحق شخس اپنے علاقے کی مقامی زکوٰۃ کمیٹی کے چیئرمین کو درخواست دے سکتا ہے۔ گزارہ الاؤنس کراس چیک کے ذریعے ادا کیا جاتا ہے"
                             android:textColor="@color/colorPrimaryDark"
                             android:textSize="15sp" />
 
-                        <com.kpitb.zakattandusherr.utility.CustomTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="serif"
-                            android:id="@+id/txt7"
-                            android:gravity="center|right"
-                            android:justificationMode="inter_word"
-                            android:text="1: 415.200 ملین روپے، ساٹھ فیصد باقاعدہ زکوٰۃ بجٹ کے. \n2: روپے 1000 فی مہینہ مستحک \n3: مالی سال 2016-17ء میں فائدہ اٹھانے والوں کی تعداد 34600. \n4: زکوٰۃ امداد فراہم کرنے کے لئے ٓاستحقق کا تعین علاقے کی مقامی زکوٰۃ کمیٹی کرتی ہے۔"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textSize="15sp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

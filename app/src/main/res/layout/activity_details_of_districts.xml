@@ -21,7 +21,7 @@
 
             <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
                 android:id="@+id/district_details"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:layout_marginTop="14dp"
@@ -29,6 +29,15 @@
                 android:text="District Offices Details"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
+
+            <View
+                android:id="@+id/separator3"
+                android:layout_width="0dp"
+                android:layout_height="0.9dp"
+                android:layout_below="@+id/district_details"
+                android:layout_alignLeft="@+id/district_details"
+                android:layout_alignRight="@+id/district_details"
+                android:background="@color/black" />
 
             <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/card_hospital_item"

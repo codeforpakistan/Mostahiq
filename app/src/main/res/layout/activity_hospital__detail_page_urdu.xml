@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Hospital_DetailPage">
+
+    <include layout="@layout/main_toolbar" android:id="@+id/app_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_bar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                android:id="@+id/hospital_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="12dp"
+                android:text="ہسپتال کی تفصیلات"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/separator3"
+                android:layout_width="0dp"
+                android:layout_height="0.9dp"
+                android:layout_below="@+id/hospital_details"
+                android:layout_alignLeft="@+id/hospital_details"
+                android:layout_alignRight="@+id/hospital_details"
+                android:background="@color/black" />
+
+            <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_hospital_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hospital_details"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="#F5F5F5"
+                app:cardCornerRadius="4dp"
+                android:layout_marginHorizontal="4dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ہسپتال کا نام :"
+                        android:textSize="15sp"
+                        android:textColor="@color/yellow50"
+                        android:layout_marginRight="12dp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/hospital_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="14dp"
+                        android:text="Hospital Name"
+                        android:background="@drawable/round_filled4"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="فوکل پرسنز کا نام :"
+                        android:textColor="@color/yellow50"
+                        android:layout_marginTop="7dp"
+                        android:textSize="15sp"
+                        android:layout_marginRight="12dp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/hospital_focal_person_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="14dp"
+                        android:text="Hospital DZO Name"
+                        android:background="@drawable/round_filled4"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="فوکل شخص کا رابطہ نمبر :"
+                        android:layout_marginTop="7dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/yellow50"
+                        android:layout_marginRight="12dp" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/hospital_focal_person_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="14dp"
+                        android:textAlignment="textEnd"
+                        android:text="Hospital DZO Contact"
+                        android:background="@drawable/round_filled4"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/call_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_corners_btn_two"
+                        android:layout_margin="18dp"
+                        android:padding="0dp">
+
+                        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                            android:id="@+id/dzo_contact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/call_dzo_phone_no"
+                            android:textStyle="bold"
+                            android:text="فوکل پرسن سے رابطہ کرنے کے لئے کلک کریں"
+                            android:padding="4dp"
+                            android:textColor="@color/yellow50"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/call_dzo_phone_no"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_margin="8dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/ic_phone"
+                            android:backgroundTint="@color/yellow50"
+                            android:elevation="12dp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/card_hospital_item"
+                android:layout_margin="4dp">
+
+                <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    android:id="@+id/txt_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="پتہ تلاش کرنے کے لئے زرد بٹن پر کلک کریں :"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginHorizontal="18sp"
+                    android:textSize="15sp" />
+
+                <RelativeLayout
+                    android:id="@+id/location_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corners_btn_new"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="0dp">
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                        android:id="@+id/location_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/maps"
+                        android:textStyle="bold"
+                        android:text="ہسپتال کا مقام حاصل کریں"
+                        android:padding="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/maps"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="8dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/goole_maps"
+                        android:elevation="12dp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

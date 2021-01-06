@@ -1,5 +1,6 @@
 package com.kpitb.zakattandusherr.Adapter;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -8,13 +9,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.kpitb.zakattandusherr.DistrictsActivity;
 import com.kpitb.zakattandusherr.Modal.MainPageModelEnglish;
@@ -50,6 +55,7 @@ public class MainAdapterEnglish extends RecyclerView.Adapter<MainAdapterEnglish.
         private ImageView status_image;
         private TextView request_label,request_label_urdu;
         private RelativeLayout backgroud;
+        private CardView cardview;
 
         MainPageModelEnglish dirObj;
 
@@ -60,6 +66,7 @@ public class MainAdapterEnglish extends RecyclerView.Adapter<MainAdapterEnglish.
             request_label_urdu =  itemView.findViewById(R.id.tvTitleUrdu);
             status_image  = itemView.findViewById(R.id.ivImage);
             backgroud = itemView.findViewById(R.id.bg);
+            cardview = itemView.findViewById(R.id.cardview);
         }
 
         public void bindData(MainPageModelEnglish c) {
@@ -69,41 +76,64 @@ public class MainAdapterEnglish extends RecyclerView.Adapter<MainAdapterEnglish.
             status_image.setImageResource(c.getStatus_icon());
             backgroud.setBackgroundColor(ContextCompat.getColor(context, c.getColor()));
 
-            backgroud.setOnClickListener(new View.OnClickListener() {
+            cardview.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(final View v) {
                    mediaPlayer.start();
-                    String lable = request_label.getText().toString();
-                    if(request_label.getText().equals("Zakat Schemes")){
-                        Intent i = new Intent(context,ZakatSchemes.class);
-                        i.putExtra("LANG",lable);
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "Schemes";
-                        setStatus("Schemes_Info");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(i);
-                    }else if(request_label.getText().equals("Provincial Hospitals")){
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "Hospitals";
-                        setStatus("Hospitals_Info");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, ProvincialActivity.class));
-                    }else if(request_label.getText().equals("District Offices")){
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "Districts";
-                        setStatus("District_Info");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, DistrictsActivity.class));
-                    }
+                    YoYo.with(Techniques.Landing)
+                            .duration(200)
+                            .interpolate(new AccelerateDecelerateInterpolator())
+                            .withListener(new Animator.AnimatorListener() {
+                                @Override
+                                public void onAnimationStart(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    String lable = request_label.getText().toString();
+                                    if(request_label.getText().equals("Zakat Schemes")){
+                                        Intent i = new Intent(context,ZakatSchemes.class);
+                                        i.putExtra("LANG",lable);
+                                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "Schemes";
+                                        setStatus("Schemes_Info");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(i);
+                                    }else if(request_label.getText().equals("Provincial Hospitals")){
+                                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "Hospitals";
+                                        setStatus("Hospitals_Info");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, ProvincialActivity.class));
+                                    }else if(request_label.getText().equals("District Offices")){
+                                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "Districts";
+                                        setStatus("District_Info");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, DistrictsActivity.class));
+                                    }
+                                }
+
+                                @Override
+                                public void onAnimationCancel(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationRepeat(Animator animation) {
+
+                                }
+                            }).playOn(cardview);
                 }
             });
         }

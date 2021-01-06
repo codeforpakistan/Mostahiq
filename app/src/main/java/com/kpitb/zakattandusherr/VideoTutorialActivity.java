@@ -1,5 +1,6 @@
 package com.kpitb.zakattandusherr;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,9 +8,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -55,8 +59,31 @@ public class VideoTutorialActivity extends YouTubeBaseActivity implements YouTub
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
-                startActivity(new Intent(VideoTutorialActivity.this,MainActivity.class));
-                finish();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                startActivity(new Intent(VideoTutorialActivity.this,MainActivity.class));
+                                finish();
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(button_skip);
             }
         });
 
@@ -64,12 +91,35 @@ public class VideoTutorialActivity extends YouTubeBaseActivity implements YouTub
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
-                SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-                editor.putBoolean("IntroFlagVideo", false);
-                editor.commit();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
 
-                startActivity(new Intent(VideoTutorialActivity.this,MainActivity.class));
-                finish();
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                                editor.putBoolean("IntroFlagVideo", false);
+                                editor.commit();
+
+                                startActivity(new Intent(VideoTutorialActivity.this,MainActivity.class));
+                                finish();
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(never_show_again);
             }
         });
     }

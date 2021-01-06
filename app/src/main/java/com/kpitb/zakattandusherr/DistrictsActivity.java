@@ -41,6 +41,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class DistrictsActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SwipeRefreshLayout.OnRefreshListener{
     //private DistrictModel districtModel;
@@ -90,6 +92,10 @@ public class DistrictsActivity extends AppCompatActivity implements SearchView.O
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(txt_urdu);
                 txt_eng.setBackgroundResource(0);
                 txt_eng.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
@@ -105,6 +111,10 @@ public class DistrictsActivity extends AppCompatActivity implements SearchView.O
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(txt_eng);
                 txt_urdu.setBackgroundResource(0);
                 txt_urdu.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
@@ -139,26 +149,42 @@ public class DistrictsActivity extends AppCompatActivity implements SearchView.O
 
                         String d_id = jsonObjectNew.getString("dist_id");
                         String d_nam = jsonObjectNew.getString("dist_name");
+                        String d_nam_urd = jsonObjectNew.getString("dist_name_urdu");
+                        String d_nam_psht = jsonObjectNew.getString("dist_name_pashto");
                         String d_offcr_name = jsonObjectNew.getString("dist_officer_name");
+                        String d_offcr_name_urd = jsonObjectNew.getString("dist_officer_name_urdu");
+                        String d_offcr_name_psht = jsonObjectNew.getString("dist_officer_name_pashto");
                         String dst_lzc_numbers = jsonObjectNew.getString("dist_no_lzc");
                         String dst_phone = jsonObjectNew.getString("dist_phone");
-                        String dst_chairmanName = jsonObjectNew.getString("dist_chairman_phone");
-                        String dst_chairmanPhone = jsonObjectNew.getString("dist_chairman_name");
+                        String dst_chairmanName = jsonObjectNew.getString("dist_chairman_name");
+                        String dst_chairmanNameUrdu = jsonObjectNew.getString("dist_chairman_name_urdu");
+                        String dst_chairmanNamePashto = jsonObjectNew.getString("dist_chairman_name_pashto");
+                        String dst_chairmanPhone = jsonObjectNew.getString("dist_chairman_phone");
                         String dst_lat = jsonObjectNew.getString("dist_latitude");
                         String dst_long = jsonObjectNew.getString("dist_longitude");
 
-                        Log.e("BANGGG",d_nam);
+                        Log.e("HOOLLAA",dst_lat + dst_long);
 
                         //SET DATA TO MODEL CLASS
-                        DistrictModel model = new DistrictModel(d_id,d_nam,d_offcr_name,dst_lzc_numbers,dst_phone,
-                                dst_chairmanPhone,dst_chairmanName,dst_lat,dst_long);
+                        DistrictModel model = new DistrictModel(d_id,d_nam,d_nam_urd,d_nam_psht,d_offcr_name,
+                                d_offcr_name_urd,d_offcr_name_psht,dst_lzc_numbers,dst_phone,dst_chairmanName,
+                                dst_chairmanNameUrdu,dst_chairmanNamePashto,dst_chairmanPhone,dst_lat,
+                                dst_long);
                         //ADD MODEL INTO ARRAY LIST
                         districtModelArrayList.add(model);
                         Log.e("MODEL",districtModelArrayList.get(0).getD_name());
                     }
+
+                    Collections.sort(districtModelArrayList, new Comparator<DistrictModel>() {
+                        @Override
+                        public int compare(DistrictModel oneModel, DistrictModel twModel) {
+                            return oneModel.getD_name().compareToIgnoreCase(twModel.getD_name());
+                        }
+                    });
+
                     myAdapter = new DistrictAdapter(DistrictsActivity.this,districtModelArrayList);
-                    myAdapter.notifyDataSetChanged();
                     mRecyclerView.setAdapter(myAdapter);
+                    myAdapter.notifyDataSetChanged();
                     if (myAdapter.getItemCount() == 0){
                         Toast.makeText(DistrictsActivity.this, "EMPTY", Toast.LENGTH_SHORT).show();
                     }

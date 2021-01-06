@@ -1,6 +1,7 @@
 package com.kpitb.zakattandusherr.Adapter;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -15,11 +16,14 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.kpitb.zakattandusherr.DetailsOfLZC;
 import com.kpitb.zakattandusherr.Modal.LZCModel;
 import com.kpitb.zakattandusherr.Modal.LZCPageModel;
@@ -95,12 +99,36 @@ public class LZCAdapter extends RecyclerView.Adapter<LZCAdapter.ViewHolder> {
             backgroud.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   Intent intent = new Intent(context, DetailsOfLZC.class);
-                   intent.putExtra("LZCName",request_label.getText().toString());
-                   intent.putExtra("TehsilName",c.getTehsilName());
-                   intent.putExtra("ChairmanName",c.getLzcChairman());
-                   intent.putExtra("PhoneNo",c.getLzcPhone());
-                   context.startActivity(intent);
+                    mediaPlayer.start();
+                    YoYo.with(Techniques.Landing)
+                            .duration(200)
+                            .interpolate(new AccelerateDecelerateInterpolator())
+                            .withListener(new Animator.AnimatorListener() {
+                                @Override
+                                public void onAnimationStart(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    Intent intent = new Intent(context, DetailsOfLZC.class);
+                                    intent.putExtra("LZCName",request_label.getText().toString());
+                                    intent.putExtra("TehsilName",c.getTehsilName());
+                                    intent.putExtra("ChairmanName",c.getLzcChairman());
+                                    intent.putExtra("PhoneNo",c.getLzcPhone());
+                                    context.startActivity(intent);
+                                }
+
+                                @Override
+                                public void onAnimationCancel(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationRepeat(Animator animation) {
+
+                                }
+                            }).playOn(backgroud);
                 }
             });
         }

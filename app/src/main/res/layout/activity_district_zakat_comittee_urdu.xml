@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DistrictZakatComittee">
+
+    <include layout="@layout/main_toolbar" android:id="@+id/app_bar"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardUseCompatPadding="true"
+        android:layout_below="@+id/app_bar"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:id="@+id/bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/footer_gradient"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                android:id="@+id/districtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Buner"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                tools:ignore="RtlCompat" />
+
+            <com.kpitb.zakattandusherr.utility.CustomTextView
+                android:id="@+id/customTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ڈسٹرکٹ زکوٰۃ آفیسر"
+                android:textColor="@color/yellow50"
+                android:layout_below="@+id/districtName"
+                android:layout_alignParentRight="true"/>
+
+            <ImageButton
+                android:id="@+id/call_dzo_phone"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_phone"
+                android:backgroundTint="@color/yellow50"
+                android:elevation="12dp"
+                android:layout_below="@+id/districtName"
+                android:layout_alignParentLeft="true"/>
+
+
+            <com.kpitb.zakattandusherr.utility.CustomTextView
+                android:id="@+id/dzoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="Nisar Muhammad"
+                android:layout_below="@+id/customTextView2"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/dzoName"
+                android:background="@drawable/seperator" />
+
+            <com.kpitb.zakattandusherr.utility.CustomTextView
+                android:id="@+id/customTextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/view"
+                android:layout_centerHorizontal="true"
+                android:text="مقامی زکوٰۃ کمیٹی کی فہرست"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Progress"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/colorPrimaryDark" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loadingTxt"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@+id/Progress"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_marginTop="7dp"
+        android:textSize="14sp"
+        android:text="Loading.." />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lzc_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cardview" />
+
+</RelativeLayout>

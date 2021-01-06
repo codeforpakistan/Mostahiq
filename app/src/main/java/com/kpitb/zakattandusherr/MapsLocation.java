@@ -77,8 +77,19 @@ public class MapsLocation extends AppCompatActivity implements OnMapReadyCallbac
             long1 = Double.valueOf(getIntent().getStringExtra("myLong"));
         }
         else {
-
+            Toast.makeText(this, "EMPTY", Toast.LENGTH_SHORT).show();
         }
+
+     /*   Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            lat1 = extras.getDouble("myLat");
+            long1 = extras.getDouble("myLong");
+        } else {
+            Toast.makeText(this, "EMPTY", Toast.LENGTH_SHORT).show();
+        }*/
+
+        Log.e("HOOLLAA", String.valueOf(lat1 + long1));
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)

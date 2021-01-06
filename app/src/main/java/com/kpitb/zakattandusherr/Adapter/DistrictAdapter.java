@@ -1,6 +1,7 @@
 package com.kpitb.zakattandusherr.Adapter;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -16,11 +17,14 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.kpitb.zakattandusherr.DetailsOfDistricts;
 import com.kpitb.zakattandusherr.Modal.DistrictModel;
 import com.kpitb.zakattandusherr.Modal.DistrictPageModel;
@@ -272,19 +276,48 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHo
              @Override
              public void onClick(View v) {
                  mediaPlayer.start();
-                 Intent intent = new Intent(context, DetailsOfDistricts.class);
-                 Bundle args = new Bundle();
-                 args.putString("D_ID",c.getD_id());
-                 args.putString("D_NAME",c.getD_name());
-                 args.putString("DZO_NAME",c.getD_officer_name());
-                 args.putString("D_NO_OF_LZC",c.getD_no_lzc());
-                 args.putString("DZO_NUM",c.getD_officer_phone());
-                 args.putString("D_CHAIRMAN_NUM",c.getD_chairman_phone());
-                 args.putString("D_CHAIRMAN",c.getD_chairman_name());
-                 args.putString("D_LAT", c.getD_latitude());
-                 args.putString("D_LONG", c.getD_longitude());
-                 intent.putExtras(args);
-                 context.startActivity(intent);
+                 YoYo.with(Techniques.Landing)
+                         .duration(200)
+                         .interpolate(new AccelerateDecelerateInterpolator())
+                         .withListener(new Animator.AnimatorListener() {
+                             @Override
+                             public void onAnimationStart(Animator animation) {
+
+                             }
+
+                             @Override
+                             public void onAnimationEnd(Animator animation) {
+                                 Intent intent = new Intent(context, DetailsOfDistricts.class);
+                                 Bundle args = new Bundle();
+                                 args.putString("D_ID",c.getD_id());
+                                 args.putString("D_NAME",c.getD_name());
+                                 args.putString("D_NAME_URD",c.getD_name_urdu());
+                                 args.putString("D_NAME_PSH",c.getD_name_pashto());
+                                 args.putString("DZO_NAME",c.getD_officer_name());
+                                 args.putString("DZO_NAME_URD",c.getD_officer_urdu());
+                                 args.putString("DZO_NAME_PSH",c.getD_officer_pashto());
+                                 args.putString("D_NO_OF_LZC",c.getD_no_lzc());
+                                 args.putString("DZO_NUM",c.getD_officer_phone());
+                                 args.putString("D_CHAIRMAN_NUM",c.getD_chairman_phone());
+                                 args.putString("D_CHAIRMAN",c.getD_chairman_name());
+                                 args.putString("D_CHAIRMAN_URD",c.getD_chairman_name_urdu());
+                                 args.putString("D_CHAIRMAN_PSH",c.getD_chairman_name_pashto());
+                                 args.putString("D_LAT", c.getD_latitude());
+                                 args.putString("D_LONG", c.getD_longitude());
+                                 intent.putExtras(args);
+                                 context.startActivity(intent);
+                             }
+
+                             @Override
+                             public void onAnimationCancel(Animator animation) {
+
+                             }
+
+                             @Override
+                             public void onAnimationRepeat(Animator animation) {
+
+                             }
+                         }).playOn(backgroud);
              }
          });
     /*        backgroud.setOnClickListener(new View.OnClickListener() {

@@ -35,6 +35,7 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.kpitb.zakattandusherr.Adapter.HospitalListAdapter;
 import com.kpitb.zakattandusherr.Modal.HospitalPageModel;
+import com.kpitb.zakattandusherr.Modal.LZCModel;
 import com.kpitb.zakattandusherr.Modal.SourceList;
 
 import org.json.JSONArray;
@@ -52,6 +53,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -108,6 +111,10 @@ public class ProvincialActivity extends AppCompatActivity implements SearchView.
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(txt_urdu);
                 txt_eng.setBackgroundResource(0);
                 txt_eng.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
@@ -123,6 +130,10 @@ public class ProvincialActivity extends AppCompatActivity implements SearchView.
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(txt_eng);
                 txt_urdu.setBackgroundResource(0);
                 txt_urdu.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
@@ -156,7 +167,11 @@ public class ProvincialActivity extends AppCompatActivity implements SearchView.
                         JSONObject jsonObjectNew = jsonArray.getJSONObject(i);
 
                         String hos_name = jsonObjectNew.getString("dh_name");
+                        String hos_name_urdu = jsonObjectNew.getString("dh_name_urdu");
+                        String hos_name_pashto = jsonObjectNew.getString("dh_name_pushto");
                         String f_name = jsonObjectNew.getString("dh_focal_person");
+                        String f_name_urdu = jsonObjectNew.getString("dh_focal_person_urdu");
+                        String f_name_pashto = jsonObjectNew.getString("dh_focal_person_pushto");
                         String f_phone = jsonObjectNew.getString("dh_phone");
                         String h_district_id = jsonObjectNew.getString("dist_id");
                         String h_district_name = jsonObjectNew.getString("dist_name");
@@ -166,12 +181,19 @@ public class ProvincialActivity extends AppCompatActivity implements SearchView.
                         Log.e("BANGGG",hos_name);
 
                         //SET DATA TO MODEL CLASS
-                        SourceList model = new SourceList(hos_name,f_name,f_phone,h_district_id,
+                        SourceList model = new SourceList(hos_name,hos_name_urdu,hos_name_pashto,f_name,
+                                f_name_urdu,f_name_pashto,f_phone,h_district_id,
                                 h_district_name,h_lat,h_long);
                         //ADD MODEL INTO ARRAY LIST
                         sourceListArrayList.add(model);
                         Log.e("MODEL",sourceListArrayList.get(0).getHos_name());
                     }
+                    Collections.sort(sourceListArrayList, new Comparator<SourceList>() {
+                        @Override
+                        public int compare(SourceList o1, SourceList o2) {
+                            return o1.getHos_name().compareToIgnoreCase(o2.getHos_name());
+                        }
+                    });
                     myAdapter = new HospitalListAdapter(ProvincialActivity.this,sourceListArrayList);
                     myAdapter.notifyDataSetChanged();
                     mRecyclerView.setAdapter(myAdapter);

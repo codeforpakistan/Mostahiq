@@ -1,5 +1,6 @@
 package com.kpitb.zakattandusherr.Adapter;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -8,17 +9,23 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.kpitb.zakattandusherr.DistrictsActivity;
+import com.kpitb.zakattandusherr.DistrictsActivityPashto;
 import com.kpitb.zakattandusherr.Modal.MainPageModelPashto;
 import com.kpitb.zakattandusherr.ProvincialActivity;
+import com.kpitb.zakattandusherr.ProvincialActivityPashto;
 import com.kpitb.zakattandusherr.R;
 import com.kpitb.zakattandusherr.ZakatSchemes;
 
@@ -50,6 +57,7 @@ public class MainAdapterPashto extends RecyclerView.Adapter<MainAdapterPashto.Vi
         private ImageView status_image;
         private TextView request_label,request_label_urdu;
         private RelativeLayout backgroud;
+        private CardView cardView;
 
         MainPageModelPashto dirObj;
 
@@ -60,6 +68,7 @@ public class MainAdapterPashto extends RecyclerView.Adapter<MainAdapterPashto.Vi
             request_label_urdu =  itemView.findViewById(R.id.tvTitleUrdu);
             status_image  = itemView.findViewById(R.id.ivImage);
             backgroud = itemView.findViewById(R.id.bg);
+            cardView = itemView.findViewById(R.id.cardview);
         }
 
         public void bindData(MainPageModelPashto c) {
@@ -69,41 +78,64 @@ public class MainAdapterPashto extends RecyclerView.Adapter<MainAdapterPashto.Vi
             status_image.setImageResource(c.getStatus_icon());
             backgroud.setBackgroundColor(ContextCompat.getColor(context, c.getColor()));
 
-            backgroud.setOnClickListener(new View.OnClickListener() {
+            cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
-                  mediaPlayer.start();
-                    String lable = request_label.getText().toString();
-                    if(request_label.getText().equals("د زکات پلانونه")){
-                        Intent i = new Intent(context,ZakatSchemes.class);
-                        i.putExtra("LANG",lable);
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "د زکات پلانونه";
-                        setStatus("د زکات پلانونه");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(i);
-                    }else if(request_label.getText().equals("د زکات دفترونه")){
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "ولسوالۍ";
-                        setStatus("ولسوالۍ");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, DistrictsActivity.class));
-                    }else if(request_label.getText().equals("ولايتي روغتون")){
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "ولايتي روغتون";
-                        setStatus("ولايتي روغتون");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, ProvincialActivity.class));
-                    }
+                public void onClick(final View v) {
+                    mediaPlayer.start();
+                    YoYo.with(Techniques.Landing)
+                            .duration(200)
+                            .interpolate(new AccelerateDecelerateInterpolator())
+                            .withListener(new Animator.AnimatorListener() {
+                                @Override
+                                public void onAnimationStart(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    String lable = request_label.getText().toString();
+                                    if(request_label.getText().equals("د زکات پلانونه")){
+                                        Intent i = new Intent(context,ZakatSchemes.class);
+                                        i.putExtra("LANG",lable);
+                                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "د زکات پلانونه";
+                                        setStatus("د زکات پلانونه");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(i);
+                                    }else if(request_label.getText().equals("د زکات دفترونه")){
+                                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "ولسوالۍ";
+                                        setStatus("ولسوالۍ");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, DistrictsActivityPashto.class));
+                                    }else if(request_label.getText().equals("ولايتي روغتون")){
+                                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "ولايتي روغتون";
+                                        setStatus("ولايتي روغتون");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, ProvincialActivityPashto.class));
+                                    }
+                                }
+
+                                @Override
+                                public void onAnimationCancel(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationRepeat(Animator animation) {
+
+                                }
+                            }).playOn(cardView);
                 }
             });
         }

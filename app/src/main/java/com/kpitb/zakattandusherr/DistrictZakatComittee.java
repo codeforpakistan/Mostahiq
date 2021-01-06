@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -25,6 +26,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -38,6 +40,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.kpitb.zakattandusherr.Adapter.DistrictAdapter;
 import com.kpitb.zakattandusherr.Adapter.LZCAdapter;
 import com.kpitb.zakattandusherr.Modal.DistrictModel;
@@ -50,8 +54,11 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
-public class DistrictZakatComittee extends AppCompatActivity implements SearchView.OnQueryTextListener, SwipeRefreshLayout.OnRefreshListener{
+public class DistrictZakatComittee extends AppCompatActivity
+        implements SearchView.OnQueryTextListener, SwipeRefreshLayout.OnRefreshListener{
     //private LZCPageModel districtPageData;
     private RecyclerView mRecyclerView;
     private ArrayList<LZCModel> lzcModels = new ArrayList<>();
@@ -95,7 +102,30 @@ public class DistrictZakatComittee extends AppCompatActivity implements SearchVi
             @Override
             public void onClick(View view) {
                 mediaPlayer.start();
-                showClickToCallDialog(DZO,DZOphoneNumber);
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                showClickToCallDialog(DZO,DZOphoneNumber);
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(callDZO);
             }
         });
 
@@ -122,19 +152,33 @@ public class DistrictZakatComittee extends AppCompatActivity implements SearchVi
 
                         String tehsilid = jsonObjectNew.getString("tehsil_id");
                         String tehsilname = jsonObjectNew.getString("tehsil_name");
+                        String tehsilnameUrd = jsonObjectNew.getString("tehsil_name_urdu");
+                        String tehsilnamePsh = jsonObjectNew.getString("tehsil_name_pashto");
                         String lzc_chair_person = jsonObjectNew.getString("lzc_chairman");
+                        String lzc_chair_person_urd = jsonObjectNew.getString("lzc_chairman_urdu");
+                        String lzc_chair_person_psh = jsonObjectNew.getString("lzc_chairman_pashto");
                         String lzc_nam = jsonObjectNew.getString("lzc_name");
+                        String lzc_nam_urd = jsonObjectNew.getString("lzc_name_urdu");
+                        String lzc_nam_psh = jsonObjectNew.getString("lzc_name_pashto");
                         String lzc_no = jsonObjectNew.getString("lzc_phone");
 
                         Log.e("BANGGG",tehsilname);
 
                         //SET DATA TO MODEL CLASS
-                        LZCModel model = new LZCModel(tehsilid,tehsilname,lzc_chair_person,lzc_nam,lzc_no);
+                        LZCModel model = new LZCModel(tehsilid,tehsilname,tehsilnameUrd,tehsilnamePsh,
+                                lzc_chair_person,lzc_chair_person_urd,lzc_chair_person_psh,lzc_nam,
+                                lzc_nam_urd,lzc_nam_psh,lzc_no);
                         //ADD MODEL INTO ARRAY LIST
                         lzcModels.add(model);
                         Log.e("MODEL",lzcModels.get(0).getLzcName());
                     }
-                    myAdapter = new LZCAdapter(DistrictZakatComittee.this,lzcModels);
+                    Collections.sort(lzcModels, new Comparator<LZCModel>() {
+                                @Override
+                                public int compare(LZCModel o1, LZCModel o2) {
+                                    return o1.getLzcName().compareToIgnoreCase(o2.getLzcName());
+                                }
+                            });
+                            myAdapter = new LZCAdapter(DistrictZakatComittee.this, lzcModels);
                     myAdapter.notifyDataSetChanged();
                     mRecyclerView.setAdapter(myAdapter);
                     if (myAdapter.getItemCount() == 0){

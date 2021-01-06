@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -16,12 +17,16 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.kpitb.zakattandusherr.utility.CustomTextView;
 import com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage;
 
@@ -34,10 +39,16 @@ public class DetailsOfDistricts extends AppCompatActivity {
 
     String DestrictID;
     String DestrictName;
+    String DestrictNameUrd;
+    String DestrictNamePsh;
     String DZOName;
+    String DZONameUrd;
+    String DZONamePsh;
     String DZOPhone;
     String NoOfDLZC;
     String ChairMan;
+    String ChairMan_Urd;
+    String ChairMan_Psh;
     String ChairManNumber;
     String D_LATI;
     String D_LONGI;
@@ -65,17 +76,25 @@ public class DetailsOfDistricts extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         DestrictID = (String) bundle.get("D_ID");
         DestrictName = (String) bundle.get("D_NAME");
+        DestrictNameUrd = (String) bundle.get("D_NAME_URD");
+        DestrictNamePsh = (String) bundle.get("D_NAME_PSH");
         DZOName = (String) bundle.get("DZO_NAME");
+        DZONameUrd = (String) bundle.get("DZO_NAME_URD");
+        DZONamePsh = (String) bundle.get("DZO_NAME_PSH");
         NoOfDLZC = (String) bundle.get("D_NO_OF_LZC");
         DZOPhone = (String) bundle.get("DZO_NUM");
         ChairManNumber = (String) bundle.get("D_CHAIRMAN_NUM");
         ChairMan = (String) bundle.get("D_CHAIRMAN");
+        ChairMan_Urd = (String) bundle.get("D_CHAIRMAN_URD");
+        ChairMan_Psh = (String) bundle.get("D_CHAIRMAN_PSH");
         D_LATI = (String) bundle.get("D_LAT");
         D_LONGI = (String) bundle.get("D_LONG");
 
+        Log.e("HOOLLAA",D_LATI + D_LONGI);
+
         //MAKE UNDERLINE BELOW TEXT
-        district_details.setPaintFlags(district_details.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
-        district_name.setPaintFlags(district_name.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+        //district_details.setPaintFlags(district_details.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+        //district_name.setPaintFlags(district_name.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
         //SETTING DATA
         district_name.setText(DestrictName);
@@ -89,10 +108,34 @@ public class DetailsOfDistricts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
-                Intent intent1 = new Intent(DetailsOfDistricts.this,MapsLocation.class);
-                intent1.putExtra("myLat",D_LATI);
-                intent1.putExtra("myLong",D_LONGI);
-                startActivity(intent1);
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                Log.e("HOOLLAA",D_LATI + D_LONGI);
+                                Intent intent1 = new Intent(DetailsOfDistricts.this,MapsLocation.class);
+                                intent1.putExtra("myLat",D_LATI);
+                                intent1.putExtra("myLong",D_LONGI);
+                                startActivity(intent1);
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(location_layout);
                /* if (DestrictName.equals("Mansehra"))
                 {
                     Intent intent = new Intent(DetailsOfDistricts.this, MapsLocation.class);
@@ -261,7 +304,30 @@ public class DetailsOfDistricts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
-                showClickToCallDialog(DZOName,DZOPhone);
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                showClickToCallDialog(DZOName,DZOPhone);
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(call_layout);
             }
         });
 
@@ -269,12 +335,35 @@ public class DetailsOfDistricts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
-                Intent intent1 = new Intent(DetailsOfDistricts.this,DistrictZakatComittee.class);
-                intent1.putExtra("ID",DestrictID);
-                intent1.putExtra("District",district_name.getText().toString());
-                intent1.putExtra("DZO",dzo_name.getText().toString());
-                intent1.putExtra("DZO_PHONE_NUMBER",dzo_contact_num.getText().toString());
-                startActivity(intent1);
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                Intent intent1 = new Intent(DetailsOfDistricts.this,DistrictZakatComittee.class);
+                                intent1.putExtra("ID",DestrictID);
+                                intent1.putExtra("District",district_name.getText().toString());
+                                intent1.putExtra("DZO",dzo_name.getText().toString());
+                                intent1.putExtra("DZO_PHONE_NUMBER",dzo_contact_num.getText().toString());
+                                startActivity(intent1);
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(dlzcs_layout_btn);
             }
         });
     }

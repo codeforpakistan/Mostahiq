@@ -2,12 +2,20 @@ package com.kpitb.zakattandusherr.Modal;
 
 public class SourceList {
 
-    String hos_name,hos_focal_person,focal_person_phone,
+    String hos_name,hos_name_urdu,hos_name_pashto,hos_focal_person,hos_focal_person_urdu,hos_focal_person_pashto
+            ,focal_person_phone,
             hos_district_id,hos_district_name,hos_district_latitude,hos_district_longitude;
 
-    public SourceList(String hos_name, String hos_focal_person, String focal_person_phone, String hos_district_id, String hos_district_name, String hos_district_latitude, String hos_district_longitude) {
+    public SourceList(String hos_name, String hos_name_urdu, String hos_name_pashto, String hos_focal_person,
+                      String hos_focal_person_urdu, String hos_focal_person_pashto, String focal_person_phone,
+                      String hos_district_id, String hos_district_name, String hos_district_latitude,
+                      String hos_district_longitude) {
         this.hos_name = hos_name;
+        this.hos_name_urdu = hos_name_urdu;
+        this.hos_name_pashto = hos_name_pashto;
         this.hos_focal_person = hos_focal_person;
+        this.hos_focal_person_urdu = hos_focal_person_urdu;
+        this.hos_focal_person_pashto = hos_focal_person_pashto;
         this.focal_person_phone = focal_person_phone;
         this.hos_district_id = hos_district_id;
         this.hos_district_name = hos_district_name;
@@ -23,12 +31,44 @@ public class SourceList {
         this.hos_name = hos_name;
     }
 
+    public String getHos_name_urdu() {
+        return hos_name_urdu;
+    }
+
+    public void setHos_name_urdu(String hos_name_urdu) {
+        this.hos_name_urdu = hos_name_urdu;
+    }
+
+    public String getHos_name_pashto() {
+        return hos_name_pashto;
+    }
+
+    public void setHos_name_pashto(String hos_name_pashto) {
+        this.hos_name_pashto = hos_name_pashto;
+    }
+
     public String getHos_focal_person() {
         return hos_focal_person;
     }
 
     public void setHos_focal_person(String hos_focal_person) {
         this.hos_focal_person = hos_focal_person;
+    }
+
+    public String getHos_focal_person_urdu() {
+        return hos_focal_person_urdu;
+    }
+
+    public void setHos_focal_person_urdu(String hos_focal_person_urdu) {
+        this.hos_focal_person_urdu = hos_focal_person_urdu;
+    }
+
+    public String getHos_focal_person_pashto() {
+        return hos_focal_person_pashto;
+    }
+
+    public void setHos_focal_person_pashto(String hos_focal_person_pashto) {
+        this.hos_focal_person_pashto = hos_focal_person_pashto;
     }
 
     public String getFocal_person_phone() {

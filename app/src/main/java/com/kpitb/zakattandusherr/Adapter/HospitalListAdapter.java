@@ -1,6 +1,7 @@
 package com.kpitb.zakattandusherr.Adapter;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -17,11 +18,14 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.kpitb.zakattandusherr.Hospital_DetailPage;
 import com.kpitb.zakattandusherr.Modal.HospitalPageModel;
 import com.kpitb.zakattandusherr.Modal.SourceList;
@@ -95,21 +99,48 @@ public class HospitalListAdapter extends RecyclerView.Adapter<HospitalListAdapte
                 @Override
                 public void onClick(View v) {
                     mediaPlayer.start();
-                    //showClickToCallDialog(hospital,fperson,phoneNo);
-                    Intent intent = new Intent(context, Hospital_DetailPage.class);
+                    YoYo.with(Techniques.Landing)
+                            .duration(200)
+                            .interpolate(new AccelerateDecelerateInterpolator())
+                            .withListener(new Animator.AnimatorListener() {
+                                @Override
+                                public void onAnimationStart(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    //showClickToCallDialog(hospital,fperson,phoneNo);
+                                    Intent intent = new Intent(context, Hospital_DetailPage.class);
 /*                    intent.putExtra("HOSP_NAME",c.getHos_name());
                     intent.putExtra("DZO_NAME",c.getHos_focal_person());
                     intent.putExtra("DZO_PHONE",c.getFocal_person_phone());
                     intent.putExtra("HOS_LAT",c.getHos_district_latitude());
                     intent.putExtra("HOS_LONG",c.getHos_district_longitude());*/
-                    Bundle args = new Bundle();
-                    args.putString("HOSP_NAME",c.getHos_name());
-                    args.putString("DZO_NAME",c.getHos_focal_person());
-                    args.putString("DZO_PHONE",c.getFocal_person_phone());
-                    args.putString("HOS_LAT",c.getHos_district_latitude());
-                    args.putString("HOS_LONG", c.getHos_district_longitude());
-                    intent.putExtras(args);
-                    context.startActivity(intent);
+                                    Bundle args = new Bundle();
+                                    args.putString("HOSP_NAME",c.getHos_name());
+                                    args.putString("HOSP_NAME_URD",c.getHos_name_urdu());
+                                    args.putString("HOSP_NAME_PST",c.getHos_name_pashto());
+                                    args.putString("DZO_NAME",c.getHos_focal_person());
+                                    args.putString("DZO_NAME_URD",c.getHos_focal_person_urdu());
+                                    args.putString("DZO_NAME_PST",c.getHos_focal_person_pashto());
+                                    args.putString("DZO_PHONE",c.getFocal_person_phone());
+                                    args.putString("HOS_LAT",c.getHos_district_latitude());
+                                    args.putString("HOS_LONG", c.getHos_district_longitude());
+                                    intent.putExtras(args);
+                                    context.startActivity(intent);
+                                }
+
+                                @Override
+                                public void onAnimationCancel(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationRepeat(Animator animation) {
+
+                                }
+                            }).playOn(card_hospital_item);
                 }
             });
 

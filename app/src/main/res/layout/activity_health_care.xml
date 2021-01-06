@@ -267,8 +267,9 @@
                 android:layout_centerInParent="true"
                 android:drawableLeft="@drawable/ic_click"
                 android:drawablePadding="12dp"
-                android:text="Coming Soon"
+                android:text="Apply Online"
                 android:textSize="13sp"
+                android:id="@+id/coming_soon"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 tools:ignore="OnClick" />

@@ -16,7 +16,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.kpitb.zakattandusherr.utility.CustomTextView;
 
 public class Marriage_Allowance_Pashto extends AppCompatActivity {
     private static final String TAG = "DeeniMadaris";
@@ -45,12 +48,26 @@ public class Marriage_Allowance_Pashto extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        ImageView change_lang = (ImageView) toolbar.findViewById(R.id.change_language);
-
+        final ImageView change_lang = (ImageView) toolbar.findViewById(R.id.change_language);
+        final CustomTextView coming_soon = (CustomTextView) findViewById(R.id.coming_soon);
+        coming_soon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(coming_soon);
+            }
+        });
         change_lang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(change_lang);
                 DisplayMetrics metrics = getResources().getDisplayMetrics();
                 int width = metrics.widthPixels;
                 int height = metrics.heightPixels;
@@ -184,6 +201,10 @@ public class Marriage_Allowance_Pashto extends AppCompatActivity {
 
     public void DownloadForm(View view){
         mediaPlayer.start();
+        YoYo.with(Techniques.Landing)
+                .duration(200)
+                .repeat(0)
+                .playOn(view);
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://swkpk.gov.pk/wp-content/uploads/2018/01/Form-5-Marriage-Assistance.pdf"));
         Bundle params = new Bundle();
         params.putInt("ButtonID",view.getId());

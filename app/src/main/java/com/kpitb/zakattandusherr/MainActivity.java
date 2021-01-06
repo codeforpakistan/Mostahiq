@@ -8,12 +8,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.animation.Animator;
 import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -24,6 +26,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -34,6 +37,8 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.kpitb.zakattandusherr.Adapter.MainAdapterEnglish;
@@ -101,8 +106,10 @@ public class MainActivity extends AppCompatActivity {
 
     MediaPlayer mediaPlayer;
 
-    private CustomTextViewForMainPage txtComplaint,txtComplaintUrdu,txtComplaintPashto;
+    private CustomTextViewForMainPage tvTitle,txtComplaint,txtComplaintUrdu,txtComplaintPashto;
+    private CustomTextViewForMainPage tvTitleUrd, tvTitlePst;
     private RelativeLayout view;
+    private View separator,separator2,separator3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +148,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //setUpRescyclerViewUrdu();
                 mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(language_chnge);
                 DisplayMetrics metrics = getResources().getDisplayMetrics();
                 int width = metrics.widthPixels;
                 int height = metrics.heightPixels;
@@ -237,8 +248,14 @@ public class MainActivity extends AppCompatActivity {
                         if (radioUrdu.isChecked() == true)
                         {
                             txtComplaintUrdu.setVisibility(View.VISIBLE);
+                            tvTitleUrd.setVisibility(View.VISIBLE);
+                            tvTitle.setVisibility(View.INVISIBLE);
+                            tvTitlePst.setVisibility(View.INVISIBLE);
                             txtComplaint.setVisibility(View.INVISIBLE);
                             txtComplaintPashto.setVisibility(View.INVISIBLE);
+                            separator.setVisibility(View.VISIBLE);
+                            separator2.setVisibility(View.INVISIBLE);
+                            separator3.setVisibility(View.INVISIBLE);
                             setUpRescyclerViewUrdu();
                             navigationView.getMenu().clear();
                             Menu menu = navigationView.getMenu();
@@ -255,6 +272,12 @@ public class MainActivity extends AppCompatActivity {
                             txtComplaintUrdu.setVisibility(View.INVISIBLE);
                             txtComplaint.setVisibility(View.INVISIBLE);
                             txtComplaintPashto.setVisibility(View.VISIBLE);
+                            tvTitleUrd.setVisibility(View.INVISIBLE);
+                            tvTitle.setVisibility(View.INVISIBLE);
+                            tvTitlePst.setVisibility(View.VISIBLE);
+                            separator.setVisibility(View.INVISIBLE);
+                            separator2.setVisibility(View.VISIBLE);
+                            separator3.setVisibility(View.INVISIBLE);
                             setUpRescyclerViewPashto();
                             navigationView.getMenu().clear();
                             Menu menu = navigationView.getMenu();
@@ -270,6 +293,12 @@ public class MainActivity extends AppCompatActivity {
                             txtComplaintUrdu.setVisibility(View.INVISIBLE);
                             txtComplaint.setVisibility(View.VISIBLE);
                             txtComplaintPashto.setVisibility(View.INVISIBLE);
+                            tvTitleUrd.setVisibility(View.INVISIBLE);
+                            tvTitle.setVisibility(View.VISIBLE);
+                            tvTitlePst.setVisibility(View.INVISIBLE);
+                            separator.setVisibility(View.INVISIBLE);
+                            separator2.setVisibility(View.INVISIBLE);
+                            separator3.setVisibility(View.VISIBLE);
                             setUpRescyclerViewEnglish();
                             navigationView.getMenu().clear();
                             Menu menu = navigationView.getMenu();
@@ -311,6 +340,12 @@ public class MainActivity extends AppCompatActivity {
         txtComplaintUrdu = findViewById(R.id.txtComplaintUrdu);
         txtComplaintPashto = findViewById(R.id.txtComplaintPashto);
         view = findViewById(R.id.view);
+        tvTitle = findViewById(R.id.tvTitle);
+        tvTitleUrd = findViewById(R.id.tvTitleUrdu);
+        tvTitlePst = findViewById(R.id.tvTitlePashto);
+        separator = findViewById(R.id.separator);
+        separator2 = findViewById(R.id.separator2);
+        separator3 = findViewById(R.id.separator3);
 
         img_close_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -376,7 +411,16 @@ public class MainActivity extends AppCompatActivity {
                         setStatus("District_Info");
                         Log.d(TAG, "LOGZZZ: " + btnNAME);
                         firebaseAnalytics.logEvent(btnNAME,params);
-                        startActivity(new Intent(MainActivity.this, DistrictsActivity.class));
+                        if (menuItem.getTitle().equals("District Offices"))
+                        {
+                            startActivity(new Intent(MainActivity.this, DistrictsActivity.class));
+                        } else if (menuItem.getTitle().equals("د زکات دفترونه"))
+                        {
+                            startActivity(new Intent(MainActivity.this, DistrictsActivityPashto.class));
+                        } else if (menuItem.getTitle().equals("ضلعی زکوٰۃ دفاتر"))
+                        {
+                            startActivity(new Intent(MainActivity.this, DistrictsActivityUrdu.class));
+                        }
                         break;
                     case MENU_MARRIAGE_ASSITANCE_GRANT:
                         mediaPlayer.start();
@@ -386,7 +430,16 @@ public class MainActivity extends AppCompatActivity {
                         setStatus("Hospitals_Info");
                         Log.d(TAG, "LOGZZZ: " + btnNAME);
                         firebaseAnalytics.logEvent(btnNAME,params2);
-                        startActivity(new Intent(MainActivity.this, ProvincialActivity.class));
+                        if (menuItem.getTitle().equals("Provincial Hospitals"))
+                        {
+                            startActivity(new Intent(MainActivity.this, ProvincialActivity.class));
+                        } else if (menuItem.getTitle().equals("ولايتي روغتون"))
+                        {
+                            startActivity(new Intent(MainActivity.this, ProvincialActivityPashto.class));
+                        } else if (menuItem.getTitle().equals("صوبائی ہسپتال"))
+                        {
+                            startActivity(new Intent(MainActivity.this, ProvincialActivityUrdu.class));
+                        }
                         break;
                     case MENU_EDUCATIONAL_GRANT:
                         mediaPlayer.start();
@@ -396,9 +449,22 @@ public class MainActivity extends AppCompatActivity {
                         setStatus("Schemes_Info");
                         Log.d(TAG, "LOGZZZ: " + btnNAME);
                         firebaseAnalytics.logEvent(btnNAME,params3);
-                        Intent intent = new Intent(MainActivity.this,ZakatSchemes.class);
-                        intent.putExtra("LANG","");
-                        startActivity(intent);
+                        if (menuItem.getTitle().equals("Zakat Schemes"))
+                        {
+                            Intent intent = new Intent(MainActivity.this,ZakatSchemes.class);
+                            intent.putExtra("LANG","Zakat Schemes");
+                            startActivity(intent);
+                        } else if (menuItem.getTitle().equals("د زکات پلانونه"))
+                        {
+                            Intent intent = new Intent(MainActivity.this,ZakatSchemes.class);
+                            intent.putExtra("LANG","د زکات پلانونه");
+                            startActivity(intent);
+                        } else if (menuItem.getTitle().equals("زکوٰۃ اسکیمیں"))
+                        {
+                            Intent intent = new Intent(MainActivity.this,ZakatSchemes.class);
+                            intent.putExtra("LANG","زکوٰۃ اسکیمیں");
+                            startActivity(intent);
+                        }
                         break;
                     case CREDIT:
                         mediaPlayer.start();
@@ -508,6 +574,12 @@ public class MainActivity extends AppCompatActivity {
                                     txtComplaintUrdu.setVisibility(View.VISIBLE);
                                     txtComplaint.setVisibility(View.INVISIBLE);
                                     txtComplaintPashto.setVisibility(View.INVISIBLE);
+                                    tvTitleUrd.setVisibility(View.VISIBLE);
+                                    tvTitle.setVisibility(View.INVISIBLE);
+                                    tvTitlePst.setVisibility(View.INVISIBLE);
+                                    separator.setVisibility(View.VISIBLE);
+                                    separator2.setVisibility(View.INVISIBLE);
+                                    separator3.setVisibility(View.INVISIBLE);
                                     navigationView.getMenu().clear();
                                     Menu menu = navigationView.getMenu();
                                     menu.add(0, MENU_EDUCATIONAL_GRANT, Menu.NONE, "زکوٰۃ اسکیمیں").setIcon(R.drawable.zakat_schemz_icon);
@@ -524,6 +596,12 @@ public class MainActivity extends AppCompatActivity {
                                     txtComplaintUrdu.setVisibility(View.INVISIBLE);
                                     txtComplaint.setVisibility(View.INVISIBLE);
                                     txtComplaintPashto.setVisibility(View.VISIBLE);
+                                    tvTitleUrd.setVisibility(View.INVISIBLE);
+                                    tvTitle.setVisibility(View.INVISIBLE);
+                                    tvTitlePst.setVisibility(View.VISIBLE);
+                                    separator.setVisibility(View.INVISIBLE);
+                                    separator2.setVisibility(View.VISIBLE);
+                                    separator3.setVisibility(View.INVISIBLE);
                                     navigationView.getMenu().clear();
                                     Menu menu = navigationView.getMenu();
                                     menu.add(0, MENU_EDUCATIONAL_GRANT, Menu.NONE, "د زکات پلانونه").setIcon(R.drawable.zakat_schemz_icon);
@@ -539,6 +617,12 @@ public class MainActivity extends AppCompatActivity {
                                     txtComplaintUrdu.setVisibility(View.INVISIBLE);
                                     txtComplaint.setVisibility(View.VISIBLE);
                                     txtComplaintPashto.setVisibility(View.INVISIBLE);
+                                    tvTitleUrd.setVisibility(View.INVISIBLE);
+                                    tvTitle.setVisibility(View.VISIBLE);
+                                    tvTitlePst.setVisibility(View.INVISIBLE);
+                                    separator.setVisibility(View.INVISIBLE);
+                                    separator2.setVisibility(View.INVISIBLE);
+                                    separator3.setVisibility(View.VISIBLE);
                                     navigationView.getMenu().clear();
                                     Menu menu = navigationView.getMenu();
                                     menu.add(0, MENU_EDUCATIONAL_GRANT, Menu.NONE, "Zakat Schemes").setIcon(R.drawable.zakat_schemz_icon);
@@ -690,6 +774,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(urdu_lang);
+
                 if (relativeLayout.getParent() != null)
                 {
                     relativeLayout.removeView(my_View);
@@ -714,6 +803,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .repeat(0)
+                        .playOn(eng_lang);
                 if (relativeLayout.getParent() != null)
                 {
                     relativeLayout.removeView(my_View);
@@ -736,8 +829,30 @@ public class MainActivity extends AppCompatActivity {
                 //view.startAnimation(buttonClickAnimation);
                 //IntroDialog.dismiss();
            mediaPlayer.start();
-                IntroDialog.dismiss();
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
 
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                IntroDialog.dismiss();
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(next);
             }
         });
 

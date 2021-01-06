@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLyt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/round_filled4"
+        android:padding="10dp">
+
+        <FrameLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/topBar"
+            android:layout_alignEnd="@+id/topBar"
+            android:layout_alignRight="@+id/topBar"
+            android:layout_gravity="top|end"
+            android:background="@drawable/round_corners_btn_two"
+            android:padding="10dp">
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@drawable/round_corners_btn_two"
+            android:elevation="24dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:id="@+id/dialog_close"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:layout_marginRight="-50dp"
+                android:src="@drawable/ic_close" />
+
+            <com.kpitb.zakattandusherr.utility.CustomTextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="د خپل عمل تصدیق وکړئ"
+                android:layout_weight="8"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/field1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topBar"
+            android:padding="10dp">
+
+            <ScrollView
+                android:id="@+id/field_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="دا پروسه به تاسو ته اجازه درکړي چې لیست شوي فوکل سړی سره اړیکه ونیسئ"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
+                        android:id="@+id/person_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:lines="1"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
+                        android:id="@+id/person_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:lines="1"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <com.kpitb.zakattandusherr.utility.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="ایا تاسو غواړئ پرمخ لاړشئ ؟"
+                        android:lines="1"
+                        android:textColor="@color/red50"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <RelativeLayout
+                android:id="@+id/btn_no"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/round_corners_btn_two"
+                android:fontFamily="sans-serif"
+                android:stateListAnimator="@drawable/state_list_animator_z"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/field_text"
+                tools:ignore="OnClick">
+
+                <com.kpitb.zakattandusherr.utility.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="نه"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_yes"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/round_corners_btn_two"
+                android:fontFamily="sans-serif"
+                android:stateListAnimator="@drawable/state_list_animator_z"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="@+id/field_text"
+                app:layout_constraintTop_toBottomOf="@+id/field_text"
+                tools:ignore="OnClick">
+
+                <com.kpitb.zakattandusherr.utility.CustomTextView
+                    android:id="@+id/lbl_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="هو"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</RelativeLayout>

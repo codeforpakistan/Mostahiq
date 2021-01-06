@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -17,10 +18,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.kpitb.zakattandusherr.utility.CustomTextView;
 import com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage;
 
@@ -63,7 +67,7 @@ public class DetailsOfLZC extends AppCompatActivity {
         PhoneNum = (String) bundle.get("PhoneNo");
 
         //MAKE UNDERLINE BELOW TEXT
-        district_details.setPaintFlags(district_details.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+        //district_details.setPaintFlags(district_details.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
         //Set Data
         lzc_name.setText(LZCName);
@@ -75,7 +79,30 @@ public class DetailsOfLZC extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
-                showClickToCallDialog(Chairman,PhoneNum);
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                showClickToCallDialog(Chairman,PhoneNum);
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(call_layout);
             }
         });
     }

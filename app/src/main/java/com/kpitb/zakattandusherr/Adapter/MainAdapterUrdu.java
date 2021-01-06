@@ -1,5 +1,6 @@
 package com.kpitb.zakattandusherr.Adapter;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -8,17 +9,23 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.kpitb.zakattandusherr.DistrictsActivity;
+import com.kpitb.zakattandusherr.DistrictsActivityUrdu;
 import com.kpitb.zakattandusherr.Modal.MainPageModelUrdu;
 import com.kpitb.zakattandusherr.ProvincialActivity;
+import com.kpitb.zakattandusherr.ProvincialActivityUrdu;
 import com.kpitb.zakattandusherr.R;
 import com.kpitb.zakattandusherr.ZakatSchemes;
 
@@ -50,6 +57,7 @@ public class MainAdapterUrdu extends RecyclerView.Adapter<MainAdapterUrdu.ViewHo
         private ImageView status_image;
         private TextView request_label,request_label_urdu;
         private RelativeLayout backgroud;
+        private CardView cardView;
 
         MainPageModelUrdu dirObj;
 
@@ -60,6 +68,7 @@ public class MainAdapterUrdu extends RecyclerView.Adapter<MainAdapterUrdu.ViewHo
             request_label_urdu =  itemView.findViewById(R.id.tvTitleUrdu);
             status_image  = itemView.findViewById(R.id.ivImage);
             backgroud = itemView.findViewById(R.id.bg);
+            cardView = itemView.findViewById(R.id.cardview);
         }
 
         public void bindData(MainPageModelUrdu c) {
@@ -69,43 +78,66 @@ public class MainAdapterUrdu extends RecyclerView.Adapter<MainAdapterUrdu.ViewHo
             status_image.setImageResource(c.getStatus_icon());
             backgroud.setBackgroundColor(ContextCompat.getColor(contexts, c.getColor()));
 
-            backgroud.setOnClickListener(new View.OnClickListener() {
+            cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(final View v) {
                     mediaPlayer.start();
-                    String lable = request_label.getText().toString();
-                    if(request_label.getText().equals("زکوٰۃ اسکیمیں")){
-                        Intent i = new Intent(contexts,ZakatSchemes.class);
-                        i.putExtra("LANG",lable);
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(contexts);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "زکوٰۃ اسکیمیں";
-                        setStatus("زکوٰۃ اسکیمیں");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        contexts.startActivity(i);
-                    }else if(request_label.getText().equals("ضلعی زکوٰۃ دفاتر")){
-                        Intent i = new Intent(contexts,DistrictsActivity.class);
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(contexts);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "اضلاع";
-                        setStatus("اضلاع");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        contexts.startActivity(i);
-                    }else if(request_label.getText().equals("صوبائی ہسپتال")){
-                        Intent i = new Intent(contexts,ProvincialActivity.class);
-                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(contexts);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "صوبائی ہسپتال";
-                        setStatus("صوبائی ہسپتال");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        contexts.startActivity(i);
-                    }
+                    YoYo.with(Techniques.Landing)
+                            .duration(200)
+                            .interpolate(new AccelerateDecelerateInterpolator())
+                            .withListener(new Animator.AnimatorListener() {
+                                @Override
+                                public void onAnimationStart(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    String lable = request_label.getText().toString();
+                                    if(request_label.getText().equals("زکوٰۃ اسکیمیں")){
+                                        Intent i = new Intent(contexts,ZakatSchemes.class);
+                                        i.putExtra("LANG",lable);
+                                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(contexts);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "زکوٰۃ اسکیمیں";
+                                        setStatus("زکوٰۃ اسکیمیں");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        contexts.startActivity(i);
+                                    }else if(request_label.getText().equals("ضلعی زکوٰۃ دفاتر")){
+                                        Intent i = new Intent(contexts, DistrictsActivityUrdu.class);
+                                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(contexts);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "اضلاع";
+                                        setStatus("اضلاع");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        contexts.startActivity(i);
+                                    }else if(request_label.getText().equals("صوبائی ہسپتال")){
+                                        Intent i = new Intent(contexts, ProvincialActivityUrdu.class);
+                                        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(contexts);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "صوبائی ہسپتال";
+                                        setStatus("صوبائی ہسپتال");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        contexts.startActivity(i);
+                                    }
+                                }
+
+                                @Override
+                                public void onAnimationCancel(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationRepeat(Animator animation) {
+
+                                }
+                            }).playOn(cardView);
                 }
             });
         }

@@ -84,7 +84,8 @@
                     android:layout_centerInParent="true"
                     android:drawableLeft="@drawable/ic_click"
                     android:drawablePadding="12dp"
-                    android:text="ډېر ژر"
+                    android:text="آنلاین غوښتنه"
+                    android:id="@+id/coming_soon"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
@@ -221,15 +222,6 @@
                             android:textColor="@color/colorPrimaryDark"
                             android:textSize="15sp" />
 
-                        <com.kpitb.zakattandusherr.utility.CustomTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="serif"
-                            android:gravity="center|right"
-                            android:justificationMode="inter_word"
-                            android:text="1: څلور سوه او پنځلس ملین روپۍ ، د زکات د عادي بودیجې شپېته سلنه. \n2: د یوه مستحک لپاره په میاشت کې یو زره روپۍ. \n3: په 2016 او 17 مالي کال کې د ګټه اخیستونکو شمیر 34600 \n4: استحقاق د زکات مرستې چمتو کوي او د سیمې د ځایی زکات کمیټې لخوا ټاکل کیږي."
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textSize="15sp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

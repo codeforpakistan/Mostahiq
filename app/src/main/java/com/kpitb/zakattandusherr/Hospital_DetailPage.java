@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -17,11 +18,14 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.android.gms.maps.model.LatLng;
 import com.kpitb.zakattandusherr.utility.CustomTextView;
 
@@ -60,13 +64,17 @@ public class Hospital_DetailPage extends AppCompatActivity {
         //final Intent intent = getIntent();
         Bundle bundle = getIntent().getExtras();
         final String HospitalName = (String) bundle.get("HOSP_NAME");
+        final String HospitalNameURD = (String) bundle.get("HOSP_NAME_URD");
+        final String HospitalNamePST = (String) bundle.get("HOSP_NAME_PST");
         final String DZOName = (String) bundle.get("DZO_NAME");
+        final String DZONameURD = (String) bundle.get("DZO_NAME_URD");
+        final String DZONamePST = (String) bundle.get("DZO_NAME_PST");
         final String DZOPhone = (String) bundle.get("DZO_PHONE");
         final String HOSP_LATI = (String) bundle.get("HOS_LAT");
         final String HOSP_LONGI = (String) bundle.get("HOS_LONG");
 
         //MAKE UNDERLINE BELOW TEXT
-        hospital_details.setPaintFlags(hospital_details.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+        //hospital_details.setPaintFlags(hospital_details.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
         //SETTING DATA
         hospital_name.setText(HospitalName);
@@ -77,10 +85,34 @@ public class Hospital_DetailPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
-                Intent intent1 = new Intent(Hospital_DetailPage.this,MapsLocation.class);
-                intent1.putExtra("myLat",HOSP_LATI);
-                intent1.putExtra("myLong",HOSP_LONGI);
-                startActivity(intent1);
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                Intent intent1 = new Intent(Hospital_DetailPage.this,MapsLocation.class);
+                                intent1.putExtra("myLat",HOSP_LATI);
+                                intent1.putExtra("myLong",HOSP_LONGI);
+                                startActivity(intent1);
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(location_layout);
+
                /* if (HospitalName.equals("IRNUM Hospital, Peshawar"))
                 {
                     Intent intent = new Intent(Hospital_DetailPage.this, MapsLocation.class);
@@ -223,7 +255,31 @@ public class Hospital_DetailPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.start();
-                showClickToCallDialog(DZOName,DZOPhone);
+                YoYo.with(Techniques.Landing)
+                        .duration(200)
+                        .interpolate(new AccelerateDecelerateInterpolator())
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                showClickToCallDialog(DZOName,DZOPhone);
+
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).playOn(call_layout);
             }
         });
     }

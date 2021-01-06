@@ -1,5 +1,6 @@
 package com.kpitb.zakattandusherr.Adapter;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -8,21 +9,28 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.kpitb.zakattandusherr.DeeniMadaris;
+import com.kpitb.zakattandusherr.DistrictsActivity;
 import com.kpitb.zakattandusherr.EducationGeneral;
 import com.kpitb.zakattandusherr.EducationProfessional;
 import com.kpitb.zakattandusherr.GuzaraAllownce;
 import com.kpitb.zakattandusherr.HealthCare;
 import com.kpitb.zakattandusherr.MarriageAllownce;
 import com.kpitb.zakattandusherr.Modal.HomePageModel;
+import com.kpitb.zakattandusherr.ProvincialActivity;
 import com.kpitb.zakattandusherr.R;
+import com.kpitb.zakattandusherr.ZakatSchemes;
 
 import java.util.ArrayList;
 
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,6 +63,7 @@ public class MainPageAdapter extends RecyclerView.Adapter<MainPageAdapter.ViewHo
         private ImageView status_image;
         private TextView request_label;
         private ConstraintLayout backgroud;
+        private CardView cardView;
 
         HomePageModel dirObj;
 
@@ -64,6 +73,7 @@ public class MainPageAdapter extends RecyclerView.Adapter<MainPageAdapter.ViewHo
             request_label =  itemView.findViewById(R.id.tvTitle);
             status_image  = itemView.findViewById(R.id.ivImage);
             backgroud = itemView.findViewById(R.id.bg);
+            cardView = itemView.findViewById(R.id.cardview);
         }
 
         public void bindData(HomePageModel c) {
@@ -72,66 +82,89 @@ public class MainPageAdapter extends RecyclerView.Adapter<MainPageAdapter.ViewHo
             status_image.setImageResource(c.getStatus_icon());
             backgroud.setBackgroundColor(ContextCompat.getColor(context, c.getColor()));
 
-            backgroud.setOnClickListener(new View.OnClickListener() {
+            cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
-                   mediaPlayer.start();
-                    String lable = request_label.getText().toString();
-                    if(request_label.getText().equals("Guzzara Allowance")){
-                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "Guzzara";
-                        setStatus("Guzzara");
-                        Log.d( "LOG: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, GuzaraAllownce.class));
-                    }else if(request_label.getText().equals("Marriage Assistance")){
-                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "Marriage";
-                        setStatus("Marriage");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, MarriageAllownce.class));
-                    }else if(request_label.getText().equals("Educational Stipends (General)")){
-                         firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "Educational";
-                        setStatus("Educational");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, EducationGeneral.class));
-                    }else if(request_label.getText().equals("Educational Stipends (Technical)")){
-                         firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "Educational";
-                        setStatus("Educational");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, EducationProfessional.class));
-                    }else if(request_label.getText().equals("Deeni Madaris")) {
-                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "Madaris";
-                        setStatus("Madaris");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, DeeniMadaris.class));
-                    }else if(request_label.getText().equals("Health Care")) {
-                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-                        Bundle params = new Bundle();
-                        params.putInt("ButtonID",v.getId());
-                        btnNam = "Health";
-                        setStatus("Health");
-                        Log.d( "LOGZZZ: ", btnNam);
-                        firebaseAnalytics.logEvent(btnNam,params);
-                        context.startActivity(new Intent(context, HealthCare.class));
-                    }
+                public void onClick(final View v) {
+                    mediaPlayer.start();
+                    YoYo.with(Techniques.Landing)
+                            .duration(200)
+                            .interpolate(new AccelerateDecelerateInterpolator())
+                            .withListener(new Animator.AnimatorListener() {
+                                @Override
+                                public void onAnimationStart(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    String lable = request_label.getText().toString();
+                                    if(request_label.getText().equals("Guzzara Allowance")){
+                                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "Guzzara";
+                                        setStatus("Guzzara");
+                                        Log.d( "LOG: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, GuzaraAllownce.class));
+                                    }else if(request_label.getText().equals("Marriage Assistance")){
+                                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "Marriage";
+                                        setStatus("Marriage");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, MarriageAllownce.class));
+                                    }else if(request_label.getText().equals("Educational Stipends (General)")){
+                                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "Educational";
+                                        setStatus("Educational");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, EducationGeneral.class));
+                                    }else if(request_label.getText().equals("Educational Stipends (Technical)")){
+                                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "Educational";
+                                        setStatus("Educational");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, EducationProfessional.class));
+                                    }else if(request_label.getText().equals("Deeni Madaris")) {
+                                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "Madaris";
+                                        setStatus("Madaris");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, DeeniMadaris.class));
+                                    }else if(request_label.getText().equals("Health Care")) {
+                                        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
+                                        Bundle params = new Bundle();
+                                        params.putInt("ButtonID",v.getId());
+                                        btnNam = "Health";
+                                        setStatus("Health");
+                                        Log.d( "LOGZZZ: ", btnNam);
+                                        firebaseAnalytics.logEvent(btnNam,params);
+                                        context.startActivity(new Intent(context, HealthCare.class));
+                                    }
+                                }
+
+                                @Override
+                                public void onAnimationCancel(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationRepeat(Animator animation) {
+
+                                }
+                            }).playOn(cardView);
                 }
             });
         }
