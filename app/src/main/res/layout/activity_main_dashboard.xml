@@ -17,7 +17,7 @@
         android:layout_marginBottom="5dp"
         ></androidx.recyclerview.widget.RecyclerView>
 
-    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtComplaint"
@@ -31,7 +31,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginLeft="7dp"/>
 
-    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtComplaintUrdu"
@@ -44,7 +44,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginRight="7dp"/>
 
-    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtComplaintPashto"
@@ -65,7 +65,7 @@
         android:layout_alignParentBottom="true"
         android:id="@+id/view">
 
-        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+        <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
             android:text="Pakistan Citizen Portal"
             android:textSize="15sp" />
 
-        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+        <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
             android:id="@+id/tvTitleUrdu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
             android:text="پاکستان سٹیزن پورٹل"
             android:textSize="16sp" />
 
-        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+        <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
             android:id="@+id/tvTitlePashto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

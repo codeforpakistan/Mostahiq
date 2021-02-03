@@ -37,7 +37,7 @@
             android:orientation="horizontal"
             android:weightSum="10">
 
-            <com.kpitb.zakattandusherr.utility.CustomTextView
+            <com.kpitb.zakatandmustahiq.utility.CustomTextView
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
@@ -76,7 +76,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.kpitb.zakattandusherr.utility.CustomTextView
+                <com.kpitb.zakatandmustahiq.utility.CustomTextView
                     android:id="@+id/content_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/field_text"
                 tools:ignore="OnClick">
 
-                <com.kpitb.zakattandusherr.utility.CustomTextView
+                <com.kpitb.zakatandmustahiq.utility.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -130,7 +130,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/field_text"
                 tools:ignore="OnClick">
 
-                <com.kpitb.zakattandusherr.utility.CustomTextView
+                <com.kpitb.zakatandmustahiq.utility.CustomTextView
                     android:id="@+id/lbl_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

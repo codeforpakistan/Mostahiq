@@ -31,7 +31,7 @@
                 android:layout_centerHorizontal="true"
                 android:padding="8dp" />
 
-            <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+            <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:textSize="18sp"
                 android:singleLine="true" />
 
-            <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+            <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                 android:id="@+id/tvTitleUrdu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

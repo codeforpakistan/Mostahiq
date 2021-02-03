@@ -27,7 +27,7 @@
             android:tint="@color/orange"
             app:srcCompat="@drawable/izla_icon" />
 
-        <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+        <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

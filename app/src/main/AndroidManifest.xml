@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.kpitb.zakattandusherr">
+    package="com.kpitb.zakatandmustahiq">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -24,103 +21,103 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GuzaraAllowanceForm"
+        <activity android:name="com.kpitb.zakatandmustahiq.GuzaraAllowanceForm"
             android:theme="@style/NoActionBar"></activity>
         <activity
-            android:name=".Hospital_DetailPagePashto"
-            android:parentActivityName=".ProvincialActivityPashto"
+            android:name="com.kpitb.zakatandmustahiq.Hospital_DetailPagePashto"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.ProvincialActivityPashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".ProvincialActivityPashto"
+            android:name="com.kpitb.zakatandmustahiq.ProvincialActivityPashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DetailsOfLZC_Pashto"
-            android:parentActivityName=".DistrictZakatComitteePashto"
+            android:name="com.kpitb.zakatandmustahiq.DetailsOfLZC_Pashto"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.DistrictZakatComitteePashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DistrictZakatComitteePashto"
-            android:parentActivityName=".DetailsOfDistrictsPashto"
+            android:name="com.kpitb.zakatandmustahiq.DistrictZakatComitteePashto"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.DetailsOfDistrictsPashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DistrictsActivityPashto"
+            android:name="com.kpitb.zakatandmustahiq.DistrictsActivityPashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DetailsOfDistrictsPashto"
-            android:parentActivityName=".DistrictsActivityPashto"
+            android:name="com.kpitb.zakatandmustahiq.DetailsOfDistrictsPashto"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.DistrictsActivityPashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".Hospital_DetailPageUrdu"
-            android:parentActivityName=".ProvincialActivityUrdu"
+            android:name="com.kpitb.zakatandmustahiq.Hospital_DetailPageUrdu"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.ProvincialActivityUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DetailsOfLZC_Urdu"
-            android:parentActivityName=".DistrictZakatComitteeUrdu"
+            android:name="com.kpitb.zakatandmustahiq.DetailsOfLZC_Urdu"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.DistrictZakatComitteeUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DistrictZakatComitteeUrdu"
-            android:parentActivityName=".DetailsOfDistrictsUrdu"
+            android:name="com.kpitb.zakatandmustahiq.DistrictZakatComitteeUrdu"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.DetailsOfDistrictsUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DetailsOfDistrictsUrdu"
-            android:parentActivityName=".DistrictsActivityUrdu"
+            android:name="com.kpitb.zakatandmustahiq.DetailsOfDistrictsUrdu"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.DistrictsActivityUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DistrictsActivityUrdu"
+            android:name="com.kpitb.zakatandmustahiq.DistrictsActivityUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".ProvincialActivityUrdu"
+            android:name="com.kpitb.zakatandmustahiq.ProvincialActivityUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DetailsOfLZC"
-            android:parentActivityName=".DistrictZakatComittee"
+            android:name="com.kpitb.zakatandmustahiq.DetailsOfLZC"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.DistrictZakatComittee"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DetailsOfDistricts"
-            android:parentActivityName=".DistrictsActivity"
+            android:name="com.kpitb.zakatandmustahiq.DetailsOfDistricts"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.DistrictsActivity"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".Credit_Activity"
-            android:parentActivityName=".MainActivity"
+            android:name="com.kpitb.zakatandmustahiq.Credit_Activity"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.MainActivity"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".Hospital_DetailPage"
-            android:parentActivityName=".ProvincialActivity"
+            android:name="com.kpitb.zakatandmustahiq.Hospital_DetailPage"
+            android:parentActivityName="com.kpitb.zakatandmustahiq.ProvincialActivity"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".VideoTutorialActivity"
+            android:name="com.kpitb.zakatandmustahiq.VideoTutorialActivity"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".HealthCarePashto"
+            android:name="com.kpitb.zakatandmustahiq.HealthCarePashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DeeniMadarisPashto"
+            android:name="com.kpitb.zakatandmustahiq.DeeniMadarisPashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".EducationProfessionalPashto"
+            android:name="com.kpitb.zakatandmustahiq.EducationProfessionalPashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".EducationGeneralPashto"
+            android:name="com.kpitb.zakatandmustahiq.EducationGeneralPashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".Marriage_Allowance_Pashto"
+            android:name="com.kpitb.zakatandmustahiq.Marriage_Allowance_Pashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".GuzaraAllowancePashto"
+            android:name="com.kpitb.zakatandmustahiq.GuzaraAllowancePashto"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".EducationProfessionalUrdu"
+            android:name="com.kpitb.zakatandmustahiq.EducationProfessionalUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".EducationGeneralUrdu"
+            android:name="com.kpitb.zakatandmustahiq.EducationGeneralUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".HealthCareUrdu"
+            android:name="com.kpitb.zakatandmustahiq.HealthCareUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DeeniMadarisUrdu"
+            android:name="com.kpitb.zakatandmustahiq.DeeniMadarisUrdu"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".Marriage_Allowance_Urdu"
+            android:name="com.kpitb.zakatandmustahiq.Marriage_Allowance_Urdu"
             android:theme="@style/NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -135,44 +132,44 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".GuzaraAllownceUrdu"
+            android:name="com.kpitb.zakatandmustahiq.GuzaraAllownceUrdu"
             android:theme="@style/NoActionBar" />
-        <activity android:name=".MapsLocation" />
+        <activity android:name="com.kpitb.zakatandmustahiq.MapsLocation" />
         <activity
-            android:name=".DeeniMadaris"
-            android:theme="@style/NoActionBar" />
-        <activity
-            android:name=".ProvincialActivity"
+            android:name="com.kpitb.zakatandmustahiq.DeeniMadaris"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DistrictZakatComittee"
+            android:name="com.kpitb.zakatandmustahiq.ProvincialActivity"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".DistrictsActivity"
+            android:name="com.kpitb.zakatandmustahiq.DistrictZakatComittee"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".HealthCare"
+            android:name="com.kpitb.zakatandmustahiq.DistrictsActivity"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".EducationProfessional"
+            android:name="com.kpitb.zakatandmustahiq.HealthCare"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".ZakatSchemes"
+            android:name="com.kpitb.zakatandmustahiq.EducationProfessional"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".EducationGeneral"
+            android:name="com.kpitb.zakatandmustahiq.ZakatSchemes"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".GuzaraAllownce"
+            android:name="com.kpitb.zakatandmustahiq.EducationGeneral"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".MarriageAllownce"
+            android:name="com.kpitb.zakatandmustahiq.GuzaraAllownce"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.kpitb.zakatandmustahiq.MarriageAllownce"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.kpitb.zakatandmustahiq.MainActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name="com.kpitb.zakatandmustahiq.SplashActivity"
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -45,7 +45,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
 
-                <com.kpitb.zakattandusherr.utility.CustomTextView
+                <com.kpitb.zakatandmustahiq.utility.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -78,7 +78,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
 
-                <com.kpitb.zakattandusherr.utility.CustomTextView
+                <com.kpitb.zakatandmustahiq.utility.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -121,7 +121,7 @@
                         android:backgroundTint="@color/white"
                         android:padding="4dp">
 
-                        <com.kpitb.zakattandusherr.utility.CustomTextView
+                        <com.kpitb.zakatandmustahiq.utility.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/elgibelity_head"
@@ -143,7 +143,7 @@
                         tools:ignore="MissingConstraints">
 
 
-                        <com.kpitb.zakattandusherr.utility.CustomTextView
+                        <com.kpitb.zakatandmustahiq.utility.CustomTextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="8"
@@ -186,7 +186,7 @@
                         android:backgroundTint="@color/white"
                         android:padding="4dp">
 
-                        <com.kpitb.zakattandusherr.utility.CustomTextView
+                        <com.kpitb.zakatandmustahiq.utility.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/how_to_apply_label"
@@ -207,7 +207,7 @@
                         tools:ignore="MissingConstraints">
 
 
-                        <com.kpitb.zakattandusherr.utility.CustomTextView
+                        <com.kpitb.zakatandmustahiq.utility.CustomTextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
@@ -251,7 +251,7 @@
                         android:backgroundTint="@color/white"
                         android:padding="4dp">
 
-                        <com.kpitb.zakattandusherr.utility.CustomTextView
+                        <com.kpitb.zakatandmustahiq.utility.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/deeni_madaris"
@@ -274,7 +274,7 @@
                         tools:ignore="MissingConstraints">
 
 
-                        <com.kpitb.zakattandusherr.utility.CustomTextView
+                        <com.kpitb.zakatandmustahiq.utility.CustomTextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="8"

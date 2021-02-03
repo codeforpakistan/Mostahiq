@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+            <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                 android:id="@+id/district_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                     android:orientation="vertical">
 
 
-                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Local Zakat Committee Name"
@@ -65,7 +65,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="12dp" />
 
-                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                         android:id="@+id/lzc_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="15sp" />
 
-                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Tehsil Name"
@@ -87,7 +87,7 @@
                         android:layout_marginTop="7dp"
                         android:layout_marginLeft="12dp" />
 
-                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                         android:id="@+id/tehsil_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
-                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Chairman Name"
@@ -109,7 +109,7 @@
                         android:textColor="@color/yellow50"
                         android:layout_marginLeft="12dp" />
 
-                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                         android:id="@+id/chairman_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="15sp" />
 
-                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Chairman Number"
@@ -131,7 +131,7 @@
                         android:textColor="@color/yellow50"
                         android:layout_marginLeft="12dp" />
 
-                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                         android:id="@+id/chairman_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -158,7 +158,7 @@
                 android:layout_below="@+id/card_hospital_item"
                 android:layout_margin="4dp">
 
-                <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                     android:id="@+id/txt_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -186,7 +186,7 @@
                         android:backgroundTint="@color/yellow50"
                         android:elevation="12dp"/>
 
-                    <com.kpitb.zakattandusherr.utility.CustomTextViewForMainPage
+                    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
                         android:id="@+id/dzo_contact"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
