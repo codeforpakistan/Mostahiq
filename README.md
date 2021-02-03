@@ -1,4 +1,4 @@
-##Department Information
+## Department Information
 
 The Department of Zakat, Ushr, Social Welfare, Special Education & Women Empowerment, Khyber Pakhtunkhwa is mandated to look after various marginalized segments of the population such as the poor, destitute women, persons with disabilities, orphans, victims of violence and drug addicts through established institutions and autonomous bodies across the province.
 
@@ -15,7 +15,7 @@ Under Zakat & Ushr programmes & services, the department offers:
 * Zakat Budget Allocation
 
 
-##Mustahiq App
+## Mustahiq App
 
 Mustahiq app is an informational App where users can discover and explore information on various Zakat schemes and programmes and services. 
 
@@ -30,7 +30,7 @@ The salient features of the app are:
 * Users can find district information and local zakat communities information along with their zakat officers’ details and map locations
 
 
-##Impact of the App
+## Impact of the App
 
 Since the app aims to solve the discovery and awareness problem for target beneficiaries of Zakat and Social Welfare, it will help enable users with the following features: 
 
@@ -41,5 +41,5 @@ Since the app aims to solve the discovery and awareness problem for target benef
 * It will make all these processes paperless and will provide ease not only for the general public but also for the Zakat and Social Welfare Department
 
 
-# the tutorial video which is used in the app its URL is given below: 
+## App tutorial
 VIDEO_URL = "https://www.youtube.com/watch?v=d4BwJz0Q9oQ&ab_channel=TauseefAhmad";
