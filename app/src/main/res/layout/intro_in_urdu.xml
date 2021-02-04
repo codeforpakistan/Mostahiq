@@ -21,7 +21,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:id="@+id/content_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                         android:background="@color/colorPrimaryDark"
                         android:layout_below="@+id/content_text"/>
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:id="@+id/content_text2"
                         android:visibility="visible"
                         android:layout_width="match_parent"

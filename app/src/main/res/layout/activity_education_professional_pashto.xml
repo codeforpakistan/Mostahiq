@@ -57,7 +57,7 @@
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="تعليمى ګامونه (هنري)"
@@ -80,7 +80,7 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
@@ -126,7 +126,7 @@
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="د وړتیا معیارونه"
@@ -148,7 +148,7 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="8"
@@ -194,7 +194,7 @@
                     android:backgroundTint="@color/white"
                     android:padding="4dp">
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="څرنګه غوښتنه وکړۍ"
@@ -215,7 +215,7 @@
                     tools:ignore="MissingConstraints">
 
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="serif"
@@ -247,7 +247,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
 
-            <com.kpitb.zakatandmustahiq.utility.CustomTextView
+            <com.kpitb.mustahiq.utility.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -280,7 +280,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/how_to_apply">
 
-            <com.kpitb.zakatandmustahiq.utility.CustomTextView
+            <com.kpitb.mustahiq.utility.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"

@@ -27,7 +27,7 @@
             android:layout_marginBottom="8dp"
             android:padding="8dp" />
 
-        <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+        <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

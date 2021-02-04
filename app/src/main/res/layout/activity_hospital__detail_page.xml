@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+    <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
         android:id="@+id/hospital_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,14 +56,14 @@
            android:layout_height="wrap_content"
            android:orientation="vertical">
 
-           <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+           <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="Hospital Name:"
                android:textColor="@color/yellow50"
                android:layout_marginLeft="12dp" />
 
-           <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+           <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
                android:id="@+id/hospital_name"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
                android:textColor="@color/colorPrimaryDark"
                android:textSize="15sp" />
 
-           <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+           <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="Focal Person Name:"
@@ -85,7 +85,7 @@
                android:layout_marginTop="7dp"
                android:layout_marginLeft="12dp" />
 
-           <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+           <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
                android:id="@+id/hospital_focal_person_name"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                android:textColor="@color/colorPrimaryDark"
                android:textSize="15sp" />
 
-           <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+           <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="Focal Person Contact Number:"
@@ -107,7 +107,7 @@
                android:textColor="@color/yellow50"
                android:layout_marginLeft="12dp" />
 
-           <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+           <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
                android:id="@+id/hospital_focal_person_contact"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
                    android:backgroundTint="@color/yellow50"
                    android:elevation="12dp"/>
 
-               <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+               <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
                    android:id="@+id/dzo_contact"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
@@ -163,7 +163,7 @@
         android:layout_below="@+id/card_hospital_item"
         android:layout_margin="4dp">
 
-        <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+        <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
             android:id="@+id/txt_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                 android:background="@drawable/goole_maps"
                 android:elevation="12dp"/>
 
-            <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+            <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
                 android:id="@+id/location_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -27,7 +27,7 @@
             android:orientation="vertical"
             android:padding="8dp">
 
-            <com.kpitb.zakatandmustahiq.utility.CustomTextViewForMainPage
+            <com.kpitb.mustahiq.utility.CustomTextViewForMainPage
                 android:id="@+id/districtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                 android:textSize="24sp"
                 tools:ignore="RtlCompat" />
 
-            <com.kpitb.zakatandmustahiq.utility.CustomTextView
+            <com.kpitb.mustahiq.utility.CustomTextView
                 android:id="@+id/customTextView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 android:layout_alignParentLeft="true"/>
 
 
-            <com.kpitb.zakatandmustahiq.utility.CustomTextView
+            <com.kpitb.mustahiq.utility.CustomTextView
                 android:id="@+id/dzoName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                 android:layout_below="@+id/dzoName"
                 android:background="@drawable/seperator" />
 
-            <com.kpitb.zakatandmustahiq.utility.CustomTextView
+            <com.kpitb.mustahiq.utility.CustomTextView
                 android:id="@+id/customTextView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

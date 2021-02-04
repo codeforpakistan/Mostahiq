@@ -46,7 +46,7 @@
                 android:layout_marginRight="-50dp"
                 android:src="@drawable/ic_close" />
 
-            <com.kpitb.zakatandmustahiq.utility.CustomTextView
+            <com.kpitb.mustahiq.utility.CustomTextView
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
@@ -80,7 +80,7 @@
                     android:orientation="vertical"
                     android:layout_height="wrap_content">
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="دا پروسه به تاسو ته اجازه درکړي چې لیست شوي فوکل سړی سره اړیکه ونیسئ"
@@ -89,7 +89,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:id="@+id/person_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:id="@+id/person_no"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-                    <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                    <com.kpitb.mustahiq.utility.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -142,7 +142,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/field_text"
                 tools:ignore="OnClick">
 
-                <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                <com.kpitb.mustahiq.utility.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -169,7 +169,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/field_text"
                 tools:ignore="OnClick">
 
-                <com.kpitb.zakatandmustahiq.utility.CustomTextView
+                <com.kpitb.mustahiq.utility.CustomTextView
                     android:id="@+id/lbl_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
